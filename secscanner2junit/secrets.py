@@ -23,6 +23,6 @@ class SecretsParser(Parser):
         start_time = self.report['scan']['start_time']
         end_time = self.report['scan']['end_time']
         timing = dt.strptime(end_time, '%Y-%m-%dT%H:%M:%S') - dt.strptime(start_time, '%Y-%m-%dT%H:%M:%S')
-        testcases = [self.parse_findings(finding, timing) for finding in findings]
+        testcases = [self.parse_findings(finding, timing.seconds) for finding in findings]
         ts = TestSuite(name=self.ts_name + '-' + version, test_cases=testcases, timestamp=start_time)
         return [ts]
