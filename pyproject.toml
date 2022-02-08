@@ -1,15 +1,16 @@
 [tool.poetry]
 name = "ssecscanner2junit"
-version = "0.1.7"
+version = "0.1.8"
 description = "Convert Security Scanner Output to JUnit Format"
 authors = ["Florian Angermeir <florian.angermeir@tum.de>"]
 license = "GPL-3.0-only"
+readme = "README.md"
 packages = [
   { include = 'secscanner2junit' },
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3"
 junit-xml = "^1.9"
 
 [tool.poetry.dev-dependencies]
