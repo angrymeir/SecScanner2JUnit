@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "secscanner2junit"
-version = "0.1.0"
+version = "0.1.1"
 description = "Convert Security Scanner Output to JUnit Format"
 authors = ["Florian Angermeir <florian.angermeir@tum.de>"]
 license = "GPL-3.0-only"
 readme = "README.md"
+homepage = "https://github.com/angrymeir/SecScanner2JUnit"
+repository = "https://github.com/angrymeir/SecScanner2JUnit"
 packages = [
   { include = 'secscanner2junit' },
 ]
