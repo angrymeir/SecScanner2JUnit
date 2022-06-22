@@ -12,11 +12,17 @@ class SastParser(Parser):
         name = finding['message']
         message = finding['message']
         location_file = finding['location']['file']
-        location_line = finding['location']['start_line']
+        
+        try:
+            location_line = finding['location']['start_line']
+        except KeyError:
+            location_line = None
+            
         try:
             url = finding['identifiers'][0]['url']
         except KeyError:
             url = message
+           
         f_type = finding['identifiers'][0]['name']
         tc = TestCase(name=name, classname=self.p_type, file=location_file, elapsed_sec=time, line=location_line)
         tc.add_failure_info(message=message, output=url, failure_type=f_type)
