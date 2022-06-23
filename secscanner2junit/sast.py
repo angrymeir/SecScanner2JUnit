@@ -8,7 +8,6 @@ class SastParser(Parser):
         self.p_type = "SAST"
 
     def parse_findings(self, finding, time):
-        print(finding)
         name = finding['message']
         message = finding['message']
         location_file = finding['location']['file']
@@ -31,7 +30,7 @@ class SastParser(Parser):
     def parse(self):
         timing = 0
         findings = self.report['vulnerabilities']
-        scanners = [f['scanner']['name'] for f in findings]
+        scanners = list(set(f['scanner']['name'] for f in findings))
         testsuites = []
         for scanner in scanners:
             rel_find = filter(lambda x: x['scanner']['name'] == scanner, findings)
