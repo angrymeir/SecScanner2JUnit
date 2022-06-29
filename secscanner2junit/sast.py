@@ -1,5 +1,6 @@
 from .parser import Parser
 from junit_xml import TestSuite, TestCase
+from collections import defaultdict
 
 
 class SastParser(Parser):
@@ -8,23 +9,65 @@ class SastParser(Parser):
         self.p_type = "SAST"
 
     def parse_findings(self, finding, time):
-        name = finding['message']
-        message = finding['message']
-        location_file = finding['location']['file']
-        
+        output = ""
+        properties = defaultdict(str)
+        simple_props = ["name", "message", "description", "severity", "confidence"]
+        for prop in simple_props:
+            try:
+                prop_res = finding[prop]
+                properties[prop] = prop_res
+                output += "{prop}: {prop_res}\n".format(prop=prop, prop_res=prop_res)
+            except KeyError:
+                pass
+
         try:
-            location_line = finding['location']['start_line']
+            url = finding['links']['url']
+            properties['url'] = url
+            output += "url: {url}\n".format(url=url)
         except KeyError:
-            location_line = None
-            
+            pass
+
         try:
-            url = finding['identifiers'][0]['url']
+            file = finding['location']['file']
+            properties['file'] = file
+            output += "file: {file}\n".format(file=file)
         except KeyError:
-            url = message
-           
+            pass
+
+        try:
+            vclass = finding['location']['class']
+            properties['class'] = vclass
+            output += "class: {vclass}\n".format(vclass=vclass)
+        except KeyError:
+            pass
+
+        try:
+            method = finding['location']['method']
+            properties['method'] = method
+            output += "method: {method}\n".format(method=method)
+        except KeyError:
+            pass
+
+        try:
+            start_line = finding['location']['start_line']
+            properties['start line'] = start_line
+            output += "start line: {start_line}\n".format(start_line=start_line)
+        except KeyError:
+            pass
+
+        try:
+            end_line = finding['location']['end_line']
+            properties['end line'] = end_line
+            output += "end line: {end_line}\n".format(end_line=end_line)
+        except KeyError:
+            pass
+
         f_type = finding['identifiers'][0]['name']
-        tc = TestCase(name=name, classname=self.p_type, file=location_file, elapsed_sec=time, line=location_line)
-        tc.add_failure_info(message=message, output=url, failure_type=f_type)
+        if properties['name']:
+            tc = TestCase(name=properties['name'], classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
+        else:
+            tc = TestCase(name=f_type, classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
+        tc.add_failure_info(message=properties['message'], output=output, failure_type=f_type)
         return tc
 
     def parse(self):
