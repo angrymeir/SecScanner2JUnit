@@ -2,5 +2,6 @@ FROM gitpod/workspace-full:latest
 
 USER gitpod
 
-#RUN pip3 install pytest==4.4.2 mock pytest-testdox toml
-#RUN npm i @learnpack/learnpack -g && learnpack plugins:install learnpack-python@0.0.35
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+
+RUN poetry --version
