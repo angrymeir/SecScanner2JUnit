@@ -3,8 +3,8 @@ image:
   
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
+  - init: poetry install # runs during prebuild
+    command: echo 'poetry install finished'
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
