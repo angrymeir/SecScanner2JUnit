@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "secscanner2junit"
-version = "0.1.4"
+version = "0.1.5"
 description = "Convert Security Scanner Output to JUnit Format"
 authors = ["Florian Angermeir <florian.angermeir@tum.de>"]
 license = "GPL-3.0-only"
