@@ -21,10 +21,10 @@ class SastParser(Parser):
                 pass
 
         try:
-            url = finding['links']['url']
+            url = finding['links'][0]['url']
             properties['url'] = url
             output += "url: {url}\n".format(url=url)
-        except KeyError:
+        except (KeyError, IndexError):
             pass
 
         try:
