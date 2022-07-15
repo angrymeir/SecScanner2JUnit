@@ -11,7 +11,7 @@ class SastParser(Parser):
     def parse_findings(self, finding, time):
         output = ""
         properties = defaultdict(str)
-        simple_props = ["name", "message", "description", "severity", "confidence"]
+        simple_props = ["id", "name", "message", "description", "severity", "confidence"]
         for prop in simple_props:
             try:
                 prop_res = finding[prop]
@@ -64,7 +64,7 @@ class SastParser(Parser):
 
         f_type = finding['identifiers'][0]['name']
         if properties['name']:
-            tc = TestCase(name=properties['name'], classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
+            tc = TestCase(name=properties['name'] + " " properties['id'] , classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
         else:
             tc = TestCase(name=f_type, classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
         tc.add_failure_info(message=properties['message'], output=output, failure_type=f_type)
