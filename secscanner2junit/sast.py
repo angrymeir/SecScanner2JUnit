@@ -61,6 +61,12 @@ class SastParser(Parser):
             output += "end line: {end_line}\n".format(end_line=end_line)
         except KeyError:
             pass
+        
+        try:
+            output += "identifiers.name: {identifiers_name}\n".format(identifiers_name=['identifiers'][0]['name'])
+            output += "identifiers.value: {identifiers_value}\n".format(identifiers_value=['identifiers'][0]['value'])
+        except KeyError:
+            pass
 
         f_type = finding['identifiers'][0]['name']
         if properties['name']:
