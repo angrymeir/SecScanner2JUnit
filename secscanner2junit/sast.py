@@ -75,7 +75,7 @@ class SastParser(Parser):
         if properties['name']:
             tc = TestCase(name=properties['name'] + " (ID: " + finding_id + ")", classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
         else:
-            tc = TestCase(name=f_type , classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
+            tc = TestCase(name=f_type + " (ID: " + finding_id + ")", classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
         tc.add_failure_info(message=properties['message'], output=output, failure_type=f_type)
         return tc
 
