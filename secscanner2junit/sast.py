@@ -1,8 +1,11 @@
 from .parser import Parser
 from junit_xml import TestSuite, TestCase
 from collections import defaultdict
+from random import randrange
 
-
+# See following links to learn more about sast scanners and theirs output
+# https://docs.gitlab.com/ee/user/application_security/sast/analyzers.html#data-provided-by-analyzers
+# https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/blob/master/dist/sast-report-format.json
 class SastParser(Parser):
     def __init__(self, report, ts_name):
         super().__init__(report, ts_name)
@@ -11,7 +14,7 @@ class SastParser(Parser):
     def parse_findings(self, finding, time):
         output = ""
         properties = defaultdict(str)
-        simple_props = ["name", "message", "description", "severity", "confidence"]
+        simple_props = ["id", "name", "message", "description", "severity", "confidence"]
         for prop in simple_props:
             try:
                 prop_res = finding[prop]
@@ -69,10 +72,16 @@ class SastParser(Parser):
             pass
 
         f_type = finding['identifiers'][0]['name']
+        
+        try:
+            finding_id = finding['id']
+        except KeyError:
+            finding_id = str(randrange(1, 10000000))
+        
         if properties['name']:
-            tc = TestCase(name=properties['name'], classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
+            tc = TestCase(name=properties['name'] + " (ID: " + finding_id + ")", classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
         else:
-            tc = TestCase(name=f_type, classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
+            tc = TestCase(name=f_type + " (ID: " + finding_id + ")", classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
         tc.add_failure_info(message=properties['message'], output=output, failure_type=f_type)
         return tc
 
