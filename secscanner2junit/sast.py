@@ -67,6 +67,7 @@ class SastParser(Parser):
         
         try:
             output += "identifiers.name: {identifiers_name}\n".format(identifiers_name=finding['identifiers'][0]['name'])
+            output += "identifiers.type: {identifiers_type}\n".format(identifiers_type=finding['identifiers'][0]['type'])
             output += "identifiers.value: {identifiers_value}\n".format(identifiers_value=finding['identifiers'][0]['value'])
         except KeyError:
             pass
