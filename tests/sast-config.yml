@@ -1,0 +1,6 @@
+sast:
+  suppressions:
+    - type: "cwe"
+      value: "2555"
+    - type: "find_sec_bugs_type"
+      value: "SPRING_ENDPOINT"

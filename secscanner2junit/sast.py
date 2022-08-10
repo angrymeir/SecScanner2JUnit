@@ -1,14 +1,19 @@
-from .parser import Parser
-from junit_xml import TestSuite, TestCase
 from collections import defaultdict
 from random import randrange
+
+from junit_xml import TestSuite, TestCase
+
+from secscanner2junit.config import get_config, Config
+from secscanner2junit.parser import \
+    Parser  # is it correct? I've get error ImportError: attempted relative import with no known parent package
+
 
 # See following links to learn more about sast scanners and theirs output
 # https://docs.gitlab.com/ee/user/application_security/sast/analyzers.html#data-provided-by-analyzers
 # https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/blob/master/dist/sast-report-format.json
 class SastParser(Parser):
-    def __init__(self, report, ts_name):
-        super().__init__(report, ts_name)
+    def __init__(self, report, ts_name, config: Config):
+        super().__init__(report, ts_name, config)
         self.p_type = "SAST"
 
     def parse_findings(self, finding, time):
@@ -89,6 +94,7 @@ class SastParser(Parser):
     def parse(self):
         timing = 0
         findings = self.report['vulnerabilities']
+        findings = self.config.suppress(findings)
         scanners = list(set(f['scanner']['name'] for f in findings))
         testsuites = []
         for scanner in scanners:
@@ -96,3 +102,18 @@ class SastParser(Parser):
             testcases = [self.parse_findings(finding, timing) for finding in rel_find]
             testsuites.append(TestSuite(name=self.ts_name + scanner.replace(' ', '-'), test_cases=testcases))
         return testsuites
+
+
+def test():
+    import json
+    input_path = "../tests/gl-sast-report-many-with-same-name.json"
+    input_path_config = "../tests/sast-config.yml"
+    with open(input_path) as input_file:
+        report = json.load(input_file)
+        config = get_config(input_path_config)
+        parser = SastParser(report, input_path, config)
+        testsuite = parser.parse()
+
+
+if __name__ == "__main__":
+    test()

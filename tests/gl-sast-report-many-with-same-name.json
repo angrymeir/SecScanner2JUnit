@@ -1,0 +1,174 @@
+{
+  "version": "14.0.4",
+  "vulnerabilities": [
+    {
+      "id": "cccabffcfcf176e47f9138d7fbd763a83b310b071529b687cde3537a935cf251",
+      "category": "sast",
+      "name": "Spring CSRF unrestricted RequestMapping",
+      "message": "Spring CSRF unrestricted RequestMapping",
+      "description": "Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks",
+      "cve": "86d80cd1d198812fc1ba6860a9e965e1:SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING:src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java:23",
+      "severity": "Medium",
+      "confidence": "High",
+      "scanner": {
+        "id": "find_sec_bugs",
+        "name": "Find Security Bugs"
+      },
+      "location": {
+        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java",
+        "start_line": 23,
+        "class": "pl.com.softnet.example.springbootsoftnetexample.PingController",
+        "method": "ping"
+      },
+      "identifiers": [
+        {
+          "type": "find_sec_bugs_type",
+          "name": "Find Security Bugs-SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING",
+          "value": "SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING",
+          "url": "https://find-sec-bugs.github.io/bugs.htm#SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-352",
+          "value": "352",
+          "url": "https://cwe.mitre.org/data/definitions/352.html"
+        }
+      ]
+    },
+    {
+      "id": "db914ce5737b49650ae650fc3b0fe38a531eadd8ea780f48a013419c4adec7f0",
+      "category": "sast",
+      "name": "Found Spring endpoint",
+      "message": "Found Spring endpoint",
+      "description": "pl.com.softnet.example.springbootsoftnetexample.PingController is a Spring endpoint (Controller)",
+      "cve": "21254b1dfdebd6b8bbd05e4ed8a960c3:SPRING_ENDPOINT:src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java:23",
+      "severity": "Low",
+      "confidence": "Low",
+      "scanner": {
+        "id": "find_sec_bugs",
+        "name": "Find Security Bugs"
+      },
+      "location": {
+        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java",
+        "start_line": 23,
+        "class": "pl.com.softnet.example.springbootsoftnetexample.PingController",
+        "method": "ping"
+      },
+      "identifiers": [
+        {
+          "type": "find_sec_bugs_type",
+          "name": "Find Security Bugs-SPRING_ENDPOINT",
+          "value": "SPRING_ENDPOINT",
+          "url": "https://find-sec-bugs.github.io/bugs.htm#SPRING_ENDPOINT"
+        }
+      ]
+    },
+    {
+      "id": "f4e1ee2a65c5d8837cfe6e3b16fc368f23462596f41ca15b182625a259a58baf",
+      "category": "sast",
+      "name": "Found Spring endpoint",
+      "message": "Found Spring endpoint",
+      "description": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController is a Spring endpoint (Controller)",
+      "cve": "62a35767e47f86da1958c888ab0ddb98:SPRING_ENDPOINT:src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java:16",
+      "severity": "Low",
+      "confidence": "Low",
+      "scanner": {
+        "id": "find_sec_bugs",
+        "name": "Find Security Bugs"
+      },
+      "location": {
+        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java",
+        "start_line": 16,
+        "class": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController",
+        "method": "getDomainError"
+      },
+      "identifiers": [
+        {
+          "type": "find_sec_bugs_type",
+          "name": "Find Security Bugs-SPRING_ENDPOINT",
+          "value": "SPRING_ENDPOINT",
+          "url": "https://find-sec-bugs.github.io/bugs.htm#SPRING_ENDPOINT"
+        }
+      ]
+    },
+    {
+      "id": "e5104af1e9b781ffa19a0f9299e9c44bb62b3dd62c4483e9f2e087dc03e8cd95",
+      "category": "sast",
+      "name": "HTTP headers untrusted",
+      "message": "HTTP headers untrusted",
+      "description": "Request header can easily be altered by the client",
+      "cve": "6b0c63f9593aecd2ad80afdc4a85656d:SERVLET_HEADER:src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java:50",
+      "severity": "Low",
+      "confidence": "Low",
+      "scanner": {
+        "id": "find_sec_bugs",
+        "name": "Find Security Bugs"
+      },
+      "location": {
+        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java",
+        "start_line": 50,
+        "class": "pl.com.softnet.example.springbootsoftnetexample.PingController$IpAddressUtils",
+        "method": "getIpAddressFromRequest"
+      },
+      "identifiers": [
+        {
+          "type": "find_sec_bugs_type",
+          "name": "Find Security Bugs-SERVLET_HEADER",
+          "value": "SERVLET_HEADER",
+          "url": "https://find-sec-bugs.github.io/bugs.htm#SERVLET_HEADER"
+        }
+      ]
+    },
+    {
+      "id": "dd623e3dafc27991b80b00c2b38b8ec69ef4b2635a5838622b3efb921e2cbfac",
+      "category": "sast",
+      "name": "Found Spring endpoint",
+      "message": "Found Spring endpoint",
+      "description": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController is a Spring endpoint (Controller)",
+      "cve": "8e968b3dea7c8b68b43c07ab9b37c120:SPRING_ENDPOINT:src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java:11",
+      "severity": "Low",
+      "confidence": "Low",
+      "scanner": {
+        "id": "find_sec_bugs",
+        "name": "Find Security Bugs"
+      },
+      "location": {
+        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java",
+        "start_line": 11,
+        "class": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController",
+        "method": "getSomeFakeError"
+      },
+      "identifiers": [
+        {
+          "type": "find_sec_bugs_type",
+          "name": "Find Security Bugs-SPRING_ENDPOINT",
+          "value": "SPRING_ENDPOINT",
+          "url": "https://find-sec-bugs.github.io/bugs.htm#SPRING_ENDPOINT"
+        }
+      ]
+    }
+  ],
+  "scan": {
+    "analyzer": {
+      "id": "spotbugs",
+      "name": "Spotbugs",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "3.2.1"
+    },
+    "scanner": {
+      "id": "find_sec_bugs",
+      "name": "Find Security Bugs",
+      "url": "https://spotbugs.github.io",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "4.7.0"
+    },
+    "type": "sast",
+    "start_time": "2022-08-04T05:31:38",
+    "end_time": "2022-08-04T05:32:16",
+    "status": "success"
+  }
+}
