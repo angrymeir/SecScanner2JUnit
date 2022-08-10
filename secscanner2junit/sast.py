@@ -3,9 +3,9 @@ from random import randrange
 
 from junit_xml import TestSuite, TestCase
 
+# is it correct import changed from .parser ? I've get error ImportError: attempted relative import with no known parent package
 from secscanner2junit.config import get_config, Config
-from secscanner2junit.parser import \
-    Parser  # is it correct? I've get error ImportError: attempted relative import with no known parent package
+from secscanner2junit.parser import Parser  
 
 
 # See following links to learn more about sast scanners and theirs output
