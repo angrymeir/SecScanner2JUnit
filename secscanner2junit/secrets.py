@@ -1,11 +1,13 @@
-from .parser import Parser
 from datetime import datetime as dt
+
 from junit_xml import TestSuite, TestCase
+
+from .parser import Parser
 
 
 class SecretsParser(Parser):
-    def __init__(self, report, ts_name):
-        super().__init__(report, ts_name)
+    def __init__(self, report, ts_name, config):
+        super().__init__(report, ts_name, config)
         self.p_type = "Secrets"
 
     def parse_findings(self, finding, time):

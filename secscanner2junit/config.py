@@ -58,8 +58,8 @@ def get_config(path):
             yml_dict = safe_load(f)
 
             suppressions = []
-            sast_yml = __get_yml_sast(yml_dict)
-            for suppression in __get_suppressions(sast_yml):
+            config_yml = __get_yml_config(yml_dict)
+            for suppression in __get_suppressions(config_yml):
                 suppressions.append(__get_suppression(suppression))
 
             config = Config(suppressions)
@@ -73,24 +73,24 @@ def get_config(path):
         return Config([])
 
 
-def __get_yml_sast(yml_dict):
+def __get_yml_config(config_yml_dict):
     try:
-        return yml_dict['sast']
+        return config_yml_dict['sast']
     except TypeError:
         return dict()
     except KeyError:
         return dict()
 
 
-def __get_suppressions(sast_yml):
+def __get_suppressions(sast_yml_dict):
     try:
-        return sast_yml['suppressions']
+        return sast_yml_dict['suppressions']
     except KeyError:
         return list()
 
 
-def __get_suppression(suppression_dict):
+def __get_suppression(suppression_yml_dict):
     try:
-        return Suppression(suppression_dict['type'], suppression_dict['value'])
+        return Suppression(suppression_yml_dict['type'], suppression_yml_dict['value'])
     except KeyError:
         return None

@@ -10,7 +10,7 @@ class TestSast(unittest.TestCase):
     def test_sast_suppression(self):
         # given:
         input_report_path = "resources/test_sast/test_sast_suppression/gl-sast-report-many-with-same-name.json"
-        input_config_path = "resources/test_sast/test_sast_suppression/sast-config.yml"
+        input_config_path = "resources/test_sast/test_sast_suppression/ss2ju-config.yml"
 
         report = get_report(input_report_path)
         config = get_config(input_config_path)

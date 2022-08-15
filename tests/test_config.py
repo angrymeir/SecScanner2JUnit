@@ -7,7 +7,7 @@ class TestConfig(unittest.TestCase):
 
     def test_get_config_no_file(self):
         # given:
-        input_config_path = "resources/test_config/test_get_config_no_file/sast-config.yml"
+        input_config_path = "resources/test_config/test_get_config_no_file/ss2ju-config.yml"
 
         # when:
         config = get_config(input_config_path)
@@ -18,7 +18,7 @@ class TestConfig(unittest.TestCase):
 
     def test_get_config_empty_file(self):
         # given:
-        input_config_path = "resources/test_config/test_get_config_empty_file/sast-config.yml"
+        input_config_path = "resources/test_config/test_get_config_empty_file/ss2ju-config.yml"
 
         # when:
         config = get_config(input_config_path)
@@ -29,7 +29,7 @@ class TestConfig(unittest.TestCase):
 
     def test_get_config(self):
         # given:
-        input_config_path = "resources/test_config/test_get_config/sast-config.yml"
+        input_config_path = "resources/test_config/test_get_config/ss2ju-config.yml"
 
         # when:
         config = get_config(input_config_path)

@@ -1,9 +1,12 @@
-import sys
 import enum
 import json
+import sys
+
 from junit_xml import to_xml_report_file
-from .secrets import SecretsParser
+
+from secscanner2junit.config import get_config, Config
 from .sast import SastParser
+from .secrets import SecretsParser
 
 
 class ScanType(enum.Enum):
@@ -11,7 +14,7 @@ class ScanType(enum.Enum):
     SAST = 'sast'
 
 
-def load(input_path):
+def load_report(input_path):
     with open(input_path) as input_file:
         report = json.load(input_file)
     return report
@@ -22,13 +25,21 @@ def save_junit_report(testsuite, output_path):
         to_xml_report_file(output_file, testsuite, prettyprint=True)
 
 
+def load_config():
+    if len(sys.argv) >= 5:
+        config_path = sys.argv[4]
+        return get_config(config_path)
+    return Config([])
+
+
 def main():
     scan_type, input_path, output_path = sys.argv[1], sys.argv[2], sys.argv[3]
-    report = load(input_path)
+    ss2ju_config = load_config()
+    report = load_report(input_path)
     if scan_type == ScanType.SECRETS.value:
-        parser = SecretsParser(report, input_path)
+        parser = SecretsParser(report, input_path, ss2ju_config)
     elif scan_type == ScanType.SAST.value:
-        parser = SastParser(report, input_path)
+        parser = SastParser(report, input_path, ss2ju_config)
     else:
         raise NotImplementedError
     testsuite = parser.parse()
