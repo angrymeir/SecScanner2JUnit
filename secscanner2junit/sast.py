@@ -4,8 +4,8 @@ from random import randrange
 from junit_xml import TestSuite, TestCase
 
 # is it correct import changed from .parser ? I've get error ImportError: attempted relative import with no known parent package
-from secscanner2junit.config import get_config, Config
-from secscanner2junit.parser import Parser  
+from secscanner2junit.config import Config
+from secscanner2junit.parser import Parser
 
 
 # See following links to learn more about sast scanners and theirs output
@@ -103,17 +103,3 @@ class SastParser(Parser):
             testsuites.append(TestSuite(name=self.ts_name + scanner.replace(' ', '-'), test_cases=testcases))
         return testsuites
 
-
-def test():
-    import json
-    input_path = "../tests/gl-sast-report-many-with-same-name.json"
-    input_path_config = "../tests/sast-config.yml"
-    with open(input_path) as input_file:
-        report = json.load(input_file)
-        config = get_config(input_path_config)
-        parser = SastParser(report, input_path, config)
-        testsuite = parser.parse()
-
-
-if __name__ == "__main__":
-    test()
