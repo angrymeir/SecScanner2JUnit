@@ -36,5 +36,4 @@ class TestConfig(unittest.TestCase):
 
         # then:
         expected = Config([Suppression('cwe', '2555'), Suppression('find_sec_bugs_type', 'SPRING_ENDPOINT')])
-        assert expected == config
         self.assertEqual(expected, config)
