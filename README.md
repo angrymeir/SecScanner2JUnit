@@ -1,5 +1,6 @@
 # SecScanner2JUnit
 [![PyPI version](https://badge.fury.io/py/secscanner2junit.svg)](https://badge.fury.io/py/secscanner2junit)
+[![Downloads](https://pepy.tech/badge/secscanner2junit)](https://pepy.tech/project/secscanner2junit)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/angrymeir/SecScanner2JUnit)
 
