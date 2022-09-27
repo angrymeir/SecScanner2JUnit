@@ -93,7 +93,7 @@ semgrep-sast-convert:
 brakeman-sast-convert:
   stage: convert
   dependencies:
-     - brakeman-sast
+    - brakeman-sast
   script:
     - pip3 install SecScanner2JUnit
     - ss2ju sast gl-sast-brakeman-report.json gl-sast-brakeman-report.xml
@@ -103,5 +103,27 @@ brakeman-sast-convert:
 
 ```
 
+**Suppression**
+
+You can provide a file with suppression which will allow to ignore some vulnerabilities.
+
+You have to create a file `ss2ju-config.yml` f.e. in `.gitlab` directory which includes:
+
+```yml
+sast:
+  suppressions:
+    - type: "cwe"
+      value: "2555"
+    - type: "find_sec_bugs_type"
+      value: "SPRING_ENDPOINT"
+```
+
+And now you can modify execution command as follows:
+
+```bash
+    - ss2ju sast gl-sast-semgrep-report.json gl-sast-semgrep-report.xml .gitlab/ss2ju-config.yml
+```
+
 ## Future Plans
+
 - [ ] Implement IaC Scanning
