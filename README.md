@@ -17,7 +17,8 @@ If you are on the GitLabs Ultimate tier, just use their tooling! No need to mess
 ## Which scanning types are supported?
 All scanning types available under the free tier:
 - Secret Scanning
-- Static Application Security Testing
+- Static Application Security Testing (SAST)
+- Container Scanning
 - Infrastructure as Code Scanning
 
 ## How to use?
@@ -104,6 +105,23 @@ brakeman-sast-convert:
 
 ```
 
+**Example for Container Scanning**
+
+```yml
+# todo
+
+container_scanning-convert:
+  stage: convert
+  dependencies:
+    - container_scanning
+  script:
+    - pip3 install SecScanner2JUnit
+    - ss2ju container_scanning gl-container-scanning-report.json gl-container-scanning-report.xml
+  artifacts:
+    reports:
+      junit: gl-container-scanning-report.xml
+```
+
 **Suppression**
 
 You can provide a file with suppression which will allow to ignore some vulnerabilities.
@@ -119,7 +137,7 @@ sast:
       value: "SPRING_ENDPOINT"
 ```
 
-And now you can modify execution command as follows:
+And now you can modify execution commands as follows:
 
 ```bash
     - ss2ju sast gl-sast-semgrep-report.json gl-sast-semgrep-report.xml .gitlab/ss2ju-config.yml
