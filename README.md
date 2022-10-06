@@ -108,7 +108,15 @@ brakeman-sast-convert:
 **Example for Container Scanning**
 
 ```yml
-# todo
+- include:
+  - template: Jobs/Build.gitlab-ci.yml #Build and push the container image
+  - template: Security/Container-Scanning.gitlab-ci.yml #Scan the built image
+
+container_scanning:
+  artifacts:
+    paths:
+      - gl-container-scanning-report-format.json
+    when: always
 
 container_scanning-convert:
   stage: convert
