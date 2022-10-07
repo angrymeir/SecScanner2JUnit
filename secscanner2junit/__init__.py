@@ -5,6 +5,7 @@ import sys
 from junit_xml import to_xml_report_file
 
 from secscanner2junit.config import get_config, Config
+from secscanner2junit.container_scanning import ContainerScanningParser
 from .sast import SastParser
 from .secrets import SecretsParser
 
@@ -12,6 +13,7 @@ from .secrets import SecretsParser
 class ScanType(enum.Enum):
     SECRETS = 'secrets'
     SAST = 'sast'
+    CS = 'container_scanning'
 
 
 def load_report(input_path):
@@ -40,6 +42,8 @@ def main():
         parser = SecretsParser(report, input_path, ss2ju_config)
     elif scan_type == ScanType.SAST.value:
         parser = SastParser(report, input_path, ss2ju_config)
+    elif scan_type == ScanType.CS.value:
+        parser = ContainerScanningParser(report, input_path, ss2ju_config)
     else:
         raise NotImplementedError
     testsuite = parser.parse()

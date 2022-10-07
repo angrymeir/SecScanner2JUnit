@@ -1,0 +1,909 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "2ca5d70e4698a5b136fa99b0f0cd2f599f7bb65b",
+      "description": "curl < 7.84.0 supports \"chained\" HTTP compression algorithms, meaning that a serverresponse can be compressed multiple times and potentially with different algorithms. The number of acceptable \"links\" in this \"decompression chain\" was unbounded, allowing a malicious server to insert a virtually unlimited number of compression steps.The use of such a decompression chain could result in a \"malloc bomb\", makingcurl end up spending enormous amounts of allocated heap memory, or trying toand returning out of memory errors.",
+      "severity": "Medium",
+      "solution": "Upgrade curl to 7.61.1-22.el8_6.4",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "curl"
+          },
+          "version": "7.61.1-22.el8_6.3"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-32206",
+          "value": "CVE-2022-32206",
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32206.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32208.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-32206"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099300"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099305"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099306"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-32206.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32206"
+        },
+        {
+          "url": "https://errata.almalinux.org/9/ALSA-2022-6157.html"
+        },
+        {
+          "url": "https://hackerone.com/reports/1570651"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-32206.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-6159.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2022/08/msg00017.html"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEV6BR4MTI3CEWK2YU2HQZUW5FAS3FEY/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32206"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220915-0003/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5495-1"
+        },
+        {
+          "url": "https://www.debian.org/security/2022/dsa-5197"
+        }
+      ]
+    },
+    {
+      "id": "caa0070d02c266a233448e6395a1cd29071543e7",
+      "description": "When curl < 7.84.0 does FTP transfers secured by krb5, it handles message verification failures wrongly. This flaw makes it possible for a Man-In-The-Middle attack to go unnoticed and even allows it to inject data to the client.",
+      "severity": "Medium",
+      "solution": "Upgrade curl to 7.61.1-22.el8_6.4",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "curl"
+          },
+          "version": "7.61.1-22.el8_6.3"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-32208",
+          "value": "CVE-2022-32208",
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32206.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32208.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-32208"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099300"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099305"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099306"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-32208.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208"
+        },
+        {
+          "url": "https://errata.almalinux.org/9/ALSA-2022-6157.html"
+        },
+        {
+          "url": "https://hackerone.com/reports/1590071"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-32208.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-6159.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2022/08/msg00017.html"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEV6BR4MTI3CEWK2YU2HQZUW5FAS3FEY/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32208"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220915-0003/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5495-1"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5499-1"
+        },
+        {
+          "url": "https://www.debian.org/security/2022/dsa-5197"
+        }
+      ]
+    },
+    {
+      "id": "b6b0a128164bde0c44704285d9e535107758ccf1",
+      "description": "GnuPG through 2.3.6, in unusual situations where an attacker possesses any secret-key information from a victim's keyring and other constraints (e.g., use of GPGME) are met, allows signature forgery via injection into the status line.",
+      "severity": "Medium",
+      "solution": "Upgrade gnupg2 to 2.2.20-3.el8_6",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "gnupg2"
+          },
+          "version": "2.2.20-2.el8"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-34903",
+          "value": "CVE-2022-34903",
+          "url": "http://www.openwall.com/lists/oss-security/2022/07/02/1"
+        }
+      ],
+      "links": [
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2022/07/02/1"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-34903.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-34903"
+        },
+        {
+          "url": "https://bugs.debian.org/1014157"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-34903"
+        },
+        {
+          "url": "https://dev.gnupg.org/T6027"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-34903.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-6602.html"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FRLWJQ76A4UKHI3Q36BKSJKS4LFLQO33/"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NPTAR76EIZY7NQFENSOZO7U473257OVZ/"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VN63GBTMRWO36Y7BKA2WQHROAKCXKCBL/"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VU64FUVG2PRZBSHFOQRSP7KDVEIZ23OS/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-34903"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220826-0005/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5503-1"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5503-2"
+        },
+        {
+          "url": "https://www.debian.org/security/2022/dsa-5174"
+        },
+        {
+          "url": "https://www.openwall.com/lists/oss-security/2022/06/30/1"
+        }
+      ]
+    },
+    {
+      "id": "f57f620d0302e69029ca5d09c267d73020998328",
+      "description": "A flaw was found in gnutls. A use after free issue in client sending key_share extension may lead to memory corruption and other consequences.",
+      "severity": "Medium",
+      "solution": "Upgrade gnutls to 10:3.6.16-4.0.1.el8_fips",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "gnutls"
+          },
+          "version": "3.6.16-4.el8"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2021-20231",
+          "value": "CVE-2021-20231",
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20231.json"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20231.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20232.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3580.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-20231"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1922276"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20231"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2021-20231.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-9221.html"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r50661d6f0082709aad9a584431b59ec364f9974b63b07e0800230168@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r5d4001031e7790d8c6396c499522b4ed2aab782da87b1a14184793bb@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r5f88bed447742fcc5c47bf1c7be965ef450131914a6e1f85feba2779@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r6ac143ba6dd98bd4bf6bf010d46e56e254056459721ba18822d611f7@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r9cbc69e57276413788e90a6ee16c7c034ea4258d31935b70db2bd158@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rcd70a4c88a47a75fd2d5f3ffb7cee8c2a18c713320bd90fdcb57495f@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rf5e1256d870193def4a82ad89ab95e63943a313b5ff0d81aa87e4532@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rfd5273d72d244178441e6904a2f2b41a3268f569e8092ea0b3b2bb20@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OSLAE6PP33A7VYRYMYMUVB3U6B26GZER/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20231"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20210416-0005/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5029-1"
+        },
+        {
+          "url": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2021-03-10"
+        }
+      ]
+    },
+    {
+      "id": "dc6f502f57a9272701e2a1c9e83b327ee5a46351",
+      "description": "A flaw was found in gnutls. A use after free issue in client_send_params in lib/ext/pre_shared_key.c may lead to memory corruption and other potential consequences.",
+      "severity": "Medium",
+      "solution": "Upgrade gnutls to 10:3.6.16-4.0.1.el8_fips",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "gnutls"
+          },
+          "version": "3.6.16-4.el8"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2021-20232",
+          "value": "CVE-2021-20232",
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20231.json"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20231.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20232.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3580.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-20232"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1922275"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20232"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2021-20232.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-9221.html"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r50661d6f0082709aad9a584431b59ec364f9974b63b07e0800230168@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r5d4001031e7790d8c6396c499522b4ed2aab782da87b1a14184793bb@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r5f88bed447742fcc5c47bf1c7be965ef450131914a6e1f85feba2779@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r6ac143ba6dd98bd4bf6bf010d46e56e254056459721ba18822d611f7@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r9cbc69e57276413788e90a6ee16c7c034ea4258d31935b70db2bd158@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rcd70a4c88a47a75fd2d5f3ffb7cee8c2a18c713320bd90fdcb57495f@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rf5e1256d870193def4a82ad89ab95e63943a313b5ff0d81aa87e4532@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rfd5273d72d244178441e6904a2f2b41a3268f569e8092ea0b3b2bb20@%3Cissues.spark.apache.org%3E"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OSLAE6PP33A7VYRYMYMUVB3U6B26GZER/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20232"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20210416-0005/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5029-1"
+        },
+        {
+          "url": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2021-03-10"
+        }
+      ]
+    },
+    {
+      "id": "002b4f8d412db5d43aff6c6c8f1fe7cf08e326fa",
+      "description": "A flaw was found in the way nettle's RSA decryption functions handled specially crafted ciphertext. An attacker could use this flaw to provide a manipulated ciphertext leading to application crash and denial of service.",
+      "severity": "Medium",
+      "solution": "Upgrade gnutls to 10:3.6.16-4.0.1.el8_fips",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "gnutls"
+          },
+          "version": "3.6.16-4.el8"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2021-3580",
+          "value": "CVE-2021-3580",
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20231.json"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20231.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20232.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3580.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-3580"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1967983"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3580"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2021-3580.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-9221.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2021/09/msg00008.html"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3580"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20211104-0006/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-4990-1"
+        }
+      ]
+    },
+    {
+      "id": "9c4640380e3fb2f077311770a64a3244eccc5c2f",
+      "description": "curl < 7.84.0 supports \"chained\" HTTP compression algorithms, meaning that a serverresponse can be compressed multiple times and potentially with different algorithms. The number of acceptable \"links\" in this \"decompression chain\" was unbounded, allowing a malicious server to insert a virtually unlimited number of compression steps.The use of such a decompression chain could result in a \"malloc bomb\", makingcurl end up spending enormous amounts of allocated heap memory, or trying toand returning out of memory errors.",
+      "severity": "Medium",
+      "solution": "Upgrade libcurl to 7.61.1-22.el8_6.4",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libcurl"
+          },
+          "version": "7.61.1-22.el8_6.3"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-32206",
+          "value": "CVE-2022-32206",
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32206.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32208.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-32206"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099300"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099305"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099306"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-32206.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32206"
+        },
+        {
+          "url": "https://errata.almalinux.org/9/ALSA-2022-6157.html"
+        },
+        {
+          "url": "https://hackerone.com/reports/1570651"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-32206.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-6159.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2022/08/msg00017.html"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEV6BR4MTI3CEWK2YU2HQZUW5FAS3FEY/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32206"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220915-0003/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5495-1"
+        },
+        {
+          "url": "https://www.debian.org/security/2022/dsa-5197"
+        }
+      ]
+    },
+    {
+      "id": "a2900a77553015eb83cfbd2d96acb90c9eb07b1f",
+      "description": "When curl < 7.84.0 does FTP transfers secured by krb5, it handles message verification failures wrongly. This flaw makes it possible for a Man-In-The-Middle attack to go unnoticed and even allows it to inject data to the client.",
+      "severity": "Medium",
+      "solution": "Upgrade libcurl to 7.61.1-22.el8_6.4",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libcurl"
+          },
+          "version": "7.61.1-22.el8_6.3"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-32208",
+          "value": "CVE-2022-32208",
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:6157"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32206.json"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32208.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-32208"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099300"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099305"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2099306"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-32208.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208"
+        },
+        {
+          "url": "https://errata.almalinux.org/9/ALSA-2022-6157.html"
+        },
+        {
+          "url": "https://hackerone.com/reports/1590071"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-32208.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-6159.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2022/08/msg00017.html"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEV6BR4MTI3CEWK2YU2HQZUW5FAS3FEY/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32208"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220915-0003/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5495-1"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5499-1"
+        },
+        {
+          "url": "https://www.debian.org/security/2022/dsa-5197"
+        }
+      ]
+    },
+    {
+      "id": "95f02700d2d673c6499329e468df72dc78a19cc3",
+      "description": "The ElGamal implementation in Libgcrypt before 1.9.4 allows plaintext recovery because, during interaction between two cryptographic libraries, a certain dangerous combination of the prime defined by the receiver's public key, the generator defined by the receiver's public key, and the sender's ephemeral exponents can lead to a cross-configuration attack against OpenPGP.",
+      "severity": "High",
+      "solution": "Upgrade libgcrypt to 10:1.8.5-7.el8_6_fips",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libgcrypt"
+          },
+          "version": "1.8.5-7.el8_6"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2021-40528",
+          "value": "CVE-2021-40528",
+          "url": "https://access.redhat.com/errata/RHSA-2022:5311"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:5311"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-40528.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-40528"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2002816"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40528"
+        },
+        {
+          "url": "https://dev.gnupg.org/rCb118681ebc4c9ea4b9da79b0f9541405a64f4c13"
+        },
+        {
+          "url": "https://eprint.iacr.org/2021/923"
+        },
+        {
+          "url": "https://errata.almalinux.org/8/ALSA-2022-5311.html"
+        },
+        {
+          "url": "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=3462280f2e23e16adf3ed5176e0f2413d8861320"
+        },
+        {
+          "url": "https://ibm.github.io/system-security-research-updates/2021/07/20/insecurity-elgamal-pt1"
+        },
+        {
+          "url": "https://ibm.github.io/system-security-research-updates/2021/09/06/insecurity-elgamal-pt2"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2021-40528.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-9564.html"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-40528"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5080-1"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5080-2"
+        }
+      ]
+    },
+    {
+      "id": "8ddfc2e4670f2fa56f7672b177399f793c035719",
+      "description": "Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP.",
+      "severity": "Medium",
+      "solution": "Upgrade libgcrypt to 10:1.8.5-6.el8_fips",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libgcrypt"
+          },
+          "version": "1.8.5-7.el8_6"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2021-33560",
+          "value": "CVE-2021-33560",
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-33560.json"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-33560.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-33560"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33560"
+        },
+        {
+          "url": "https://dev.gnupg.org/T5305"
+        },
+        {
+          "url": "https://dev.gnupg.org/T5328"
+        },
+        {
+          "url": "https://dev.gnupg.org/T5466"
+        },
+        {
+          "url": "https://dev.gnupg.org/rCe8b7f10be275bcedb5fc05ed4837a89bfd605c61"
+        },
+        {
+          "url": "https://eprint.iacr.org/2021/923"
+        },
+        {
+          "url": "https://errata.almalinux.org/8/ALSA-2021-4409.html"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2021-33560.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-9263.html"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2021/06/msg00021.html"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BKKTOIGFW2SGN3DO2UHHVZ7MJSYN4AAB/"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7OAPCUGPF3VLA7QAJUQSL255D4ITVTL/"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-33560"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5080-1"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5080-2"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpujan2022.html"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpuoct2021.html"
+        }
+      ]
+    },
+    {
+      "id": "3405504180c35ac325fb72b3e377d0482e342b04",
+      "description": "A use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in 'resolved-dns-stream.c' not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later.",
+      "severity": "High",
+      "solution": "Upgrade systemd-libs to 239-58.0.1.el8_6.4",
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "systemd-libs"
+          },
+          "version": "239-58.0.1.el8_6.3"
+        },
+        "operating_system": "oracle 8.6",
+        "image": "nexus.com.pl/springboot-example:b9916511812d32271de8b9cfcaa2a5e03560973e"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-2526",
+          "value": "CVE-2022-2526",
+          "url": "https://access.redhat.com/errata/RHSA-2022:6206"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:6206"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-2526.json"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-2526"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2109926"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526"
+        },
+        {
+          "url": "https://errata.almalinux.org/8/ALSA-2022-6206.html"
+        },
+        {
+          "url": "https://github.com/systemd/systemd/commit/d973d94dec349fb676fdd844f6fe2ada3538f27c"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-2526.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-6206.html"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5583-1"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5583-2"
+        }
+      ]
+    }
+  ],
+  "remediations": [],
+  "scan": {
+    "scanner": {
+      "id": "trivy",
+      "name": "Trivy",
+      "url": "https://github.com/aquasecurity/trivy/",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "0.31.3"
+    },
+    "analyzer": {
+      "id": "gcs",
+      "name": "GitLab Container Scanning",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "5.2.0"
+    },
+    "type": "container_scanning",
+    "start_time": "2022-09-28T07:59:39",
+    "end_time": "2022-09-28T07:59:44",
+    "status": "success"
+  },
+  "version": "15.0.0"
+}
