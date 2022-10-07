@@ -30,7 +30,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/secscanner2junit
+          images: ${{ env.REGISTRY }}/angrymeir/secscanner2junit
           tags: |
             type=semver,pattern={{version}}
 
@@ -41,7 +41,7 @@ jobs:
       - name: Kaniko build
         uses: aevea/action-kaniko@v0.9.0
         with:
-          image: ${{ env.REGISTRY }}/secscanner2junit
+          image: ${{ env.REGISTRY }}/angrymeir/secscanner2junit
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           tag: ${{ github.ref_name }}
