@@ -46,4 +46,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           tag: ${{ github.ref_name }}
           tag_with_latest: true
-          extra_args: --build-arg=version=${{ github.ref_name }}
+          extra_args: --build-arg=VERSION=${{ github.ref_name }}
