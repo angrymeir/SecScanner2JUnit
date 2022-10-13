@@ -27,7 +27,7 @@ Procedure:
 2. Convert report
 3. Upload converted report as junit report
 
-**Example for Secret Scanning**  
+### Example for Secret Scanning
 This example can be used as is.
 ```yaml
 stages:
@@ -55,7 +55,7 @@ secret_convert:
       junit: gl-secret-detection-report.xml
 ```
 
-**Example for SAST**  
+### Example for SAST  
 Since GitLab decides dynamically which scanners to use depending on project languages, it makes sense to first perform a testrun only including the template. This way one can see which jobs are executed and then overwrite them. 
 ```yaml
 stages:
@@ -105,9 +105,9 @@ brakeman-sast-convert:
 
 ```
 
-**Example for Container Scanning**
+### Example for Container Scanning
 
-```yml
+```yaml
 - include:
   - template: Jobs/Build.gitlab-ci.yml #Build and push the container image
   - template: Security/Container-Scanning.gitlab-ci.yml #Scan the built image
@@ -130,7 +130,7 @@ container_scanning-convert:
       junit: gl-container-scanning-report.xml
 ```
 
-**Suppression**
+### Suppression
 
 You can provide a file with suppression which will allow to ignore some vulnerabilities.
 
@@ -149,6 +149,27 @@ And now you can modify execution commands as follows:
 
 ```bash
     - ss2ju sast gl-sast-semgrep-report.json gl-sast-semgrep-report.xml .gitlab/ss2ju-config.yml
+```
+
+
+### Usage with docker
+For easier usage in CI, `Secscanner2JUnit` is also shipped in a docker container: https://hub.docker.com/r/angrymeir/secscanner2junit  
+Its' usage is similar to the ways described above:
+```yaml
+...
+
+secret_convert:
+  stage: convert
+  image:
+    name: angrymeir/secscanner2junit:latest
+    entrypoint: [""]
+  dependencies:
+    - secret_detection
+  script:
+    - ss2ju secrets gl-secret-detection-report.json gl-secret-detection-report.xml
+  artifacts:
+    reports:
+      junit: gl-secret-detection-report.xml
 ```
 
 ## Future Plans
