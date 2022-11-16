@@ -1,0 +1,4 @@
+sast:
+  suppressions:
+    - type: "gitleaks_rule_id"
+      value: "PGP-PK"
