@@ -40,4 +40,7 @@ class SastParser(Parser):
 
             testsuites.append(TestSuite(name=self.ts_name + scanner.replace(' ', '-'), test_cases=testcases))
 
-            return testsuites
+        # If the report was empty, we generate an empty testsuite to return a valid Junit XML file
+        if len(testsuites) == 0:
+            testsuites.append(TestSuite(name=self.ts_name, test_cases=[]))
+        return testsuites
