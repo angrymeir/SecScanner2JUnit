@@ -6,8 +6,8 @@ from junit_xml import to_xml_report_file
 
 from secscanner2junit.config import get_config, Config
 from secscanner2junit.container_scanning import ContainerScanningParser
-from .sast import SastParser
-from .secrets import SecretsParser
+from secscanner2junit.sast import SastParser
+from secscanner2junit.secrets import SecretsParser
 
 
 class ScanType(enum.Enum):

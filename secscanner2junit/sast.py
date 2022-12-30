@@ -1,11 +1,8 @@
-from collections import defaultdict
-from random import randrange
-
 from junit_xml import TestSuite, TestCase
 
-# is it correct import changed from .parser ? I've get error ImportError: attempted relative import with no known parent package
 from secscanner2junit.config import Config
 from secscanner2junit.parser import Parser
+from secscanner2junit.vulnerability import SastVulnerability
 
 
 # See following links to learn more about sast scanners and theirs output
@@ -16,90 +13,34 @@ class SastParser(Parser):
         super().__init__(report, ts_name, config)
         self.p_type = "SAST"
 
-    def parse_findings(self, finding, time):
-        output = ""
-        properties = defaultdict(str)
-        simple_props = ["id", "name", "message", "description", "severity", "confidence"]
-        for prop in simple_props:
-            try:
-                prop_res = finding[prop]
-                properties[prop] = prop_res
-                output += "{prop}: {prop_res}\n".format(prop=prop, prop_res=prop_res)
-            except KeyError:
-                pass
+    def parse_vulnerability(self, raw_vulnerability):
+        vulnerability = SastVulnerability(raw_vulnerability)
 
-        try:
-            url = finding['links'][0]['url']
-            properties['url'] = url
-            output += "url: {url}\n".format(url=url)
-        except (KeyError, IndexError):
-            pass
+        tc = TestCase(name=vulnerability.get_testcase_name(),
+                      classname=self.p_type,
+                      file=vulnerability.get_location(),
+                      elapsed_sec=1)
 
-        try:
-            file = finding['location']['file']
-            properties['file'] = file
-            output += "file: {file}\n".format(file=file)
-        except KeyError:
-            pass
-
-        try:
-            vclass = finding['location']['class']
-            properties['class'] = vclass
-            output += "class: {vclass}\n".format(vclass=vclass)
-        except KeyError:
-            pass
-
-        try:
-            method = finding['location']['method']
-            properties['method'] = method
-            output += "method: {method}\n".format(method=method)
-        except KeyError:
-            pass
-
-        try:
-            start_line = finding['location']['start_line']
-            properties['start line'] = start_line
-            output += "start line: {start_line}\n".format(start_line=start_line)
-        except KeyError:
-            pass
-
-        try:
-            end_line = finding['location']['end_line']
-            properties['end line'] = end_line
-            output += "end line: {end_line}\n".format(end_line=end_line)
-        except KeyError:
-            pass
-        
-        try:
-            output += "identifiers.name: {identifiers_name}\n".format(identifiers_name=finding['identifiers'][0]['name'])
-            output += "identifiers.type: {identifiers_type}\n".format(identifiers_type=finding['identifiers'][0]['type'])
-            output += "identifiers.value: {identifiers_value}\n".format(identifiers_value=finding['identifiers'][0]['value'])
-        except KeyError:
-            pass
-
-        f_type = finding['identifiers'][0]['name']
-        
-        try:
-            finding_id = finding['id']
-        except KeyError:
-            finding_id = str(randrange(1, 10000000))
-        
-        if properties['name']:
-            tc = TestCase(name=properties['name'] + " (ID: " + finding_id + ")", classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
-        else:
-            tc = TestCase(name=f_type + " (ID: " + finding_id + ")", classname=self.p_type, file=properties['file'], elapsed_sec=time, line=properties['start_line'])
-        tc.add_failure_info(message=properties['message'], output=output, failure_type=f_type)
+        tc.add_failure_info(message=vulnerability.get_description(),
+                            output=vulnerability.get_output(),
+                            failure_type=vulnerability.get_failure_type())
         return tc
 
     def parse(self):
-        timing = 0
-        findings = self.report['vulnerabilities']
-        findings = self.config.suppress(findings)
-        scanners = list(set(f['scanner']['name'] for f in findings))
+        vulnerabilities = self.report['vulnerabilities']
+        vulnerabilities = self.config.suppress(vulnerabilities)
+        scanners = list(set(vuln['scanner']['name'] for vuln in vulnerabilities))
         testsuites = []
-        for scanner in scanners:
-            rel_find = filter(lambda x: x['scanner']['name'] == scanner, findings)
-            testcases = [self.parse_findings(finding, timing) for finding in rel_find]
-            testsuites.append(TestSuite(name=self.ts_name + scanner.replace(' ', '-'), test_cases=testcases))
-        return testsuites
 
+        for scanner in scanners:
+            testcases = []
+            relevant_vulns = filter(lambda x: x['scanner']['name'] == scanner, vulnerabilities)
+            for vuln in relevant_vulns:
+                testcases.append(self.parse_vulnerability(vuln))
+
+            testsuites.append(TestSuite(name=self.ts_name + scanner.replace(' ', '-'), test_cases=testcases))
+
+        # If the report was empty, we generate an empty testsuite to return a valid Junit XML file
+        if len(testsuites) == 0:
+            testsuites.append(TestSuite(name=self.ts_name, test_cases=[]))
+        return testsuites
