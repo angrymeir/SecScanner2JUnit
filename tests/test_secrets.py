@@ -48,12 +48,12 @@ class TestSecretsParser(unittest.TestCase):
 
     def test_secret_suppression(self):
         # given:
-        inpurt_report_path = "resources/test_secrets/test_secrets_suppression/gl-secret-detection-report.json"
+        input_report_path = "resources/test_secrets/test_secrets_suppression/gl-secret-detection-report.json"
         input_config_path = "resources/test_secrets/test_secrets_suppression/ss2ju-config.yml"
 
-        report = get_report(inpurt_report_path)
+        report = get_report(input_report_path)
         config = get_config(input_config_path)
-        parser = SecretsParser(report, inpurt_report_path, config)
+        parser = SecretsParser(report, input_report_path, config)
 
         # when:
         testsuite = parser.parse()
