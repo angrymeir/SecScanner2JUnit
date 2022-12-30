@@ -40,8 +40,6 @@ def parse_arguments(args):
     arg_parser.add_argument('input_file')
     arg_parser.add_argument('output_file')
     arg_parser.add_argument('config', nargs='?')
-    print(args)
-    print(arg_parser)
     return arg_parser.parse_args(args)
 
 
@@ -63,7 +61,7 @@ def main(args=None):
     else:
         raise NotImplementedError
     testsuite = parser.parse()
-    save_junit_report(testsuite, args.output_path)
+    save_junit_report(testsuite, args.output_file)
 
 
 if __name__ == '__main__':
