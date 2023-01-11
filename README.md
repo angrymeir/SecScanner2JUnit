@@ -171,7 +171,3 @@ secret_convert:
     reports:
       junit: gl-secret-detection-report.xml
 ```
-
-## Future Plans
-
-- [ ] Implement IaC Scanning
