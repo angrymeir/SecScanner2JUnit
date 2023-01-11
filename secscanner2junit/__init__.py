@@ -47,7 +47,7 @@ def main(args=None):
     if args is None:
         args = parse_arguments(sys.argv[1:])
     if args.config:
-        ss2ju_config = get_config()
+        ss2ju_config = get_config(args.config)
     else:
         ss2ju_config = Config([])
 
