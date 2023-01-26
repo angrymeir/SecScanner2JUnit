@@ -1,6 +1,7 @@
 # SecScanner2JUnit
 [![PyPI version](https://badge.fury.io/py/secscanner2junit.svg)](https://badge.fury.io/py/secscanner2junit)
 [![Downloads](https://pepy.tech/badge/secscanner2junit)](https://pepy.tech/project/secscanner2junit)
+[![Supports latest GitLab version](https://github.com/angrymeir/SecScanner2JUnit/actions/workflows/report-validate.yml/badge.svg)](https://github.com/angrymeir/SecScanner2JUnit/actions/workflows/report-validate.yml)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/angrymeir/SecScanner2JUnit)
 

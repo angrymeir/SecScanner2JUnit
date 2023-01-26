@@ -1,0 +1,48 @@
+name: Works with latest GitLab version
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install jsonschema validator
+        run: pip3 install jsonschema
+        
+      - name: Get schemas
+        run: |
+          curl https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/master/dist/sast-report-format.json >> sast_schema.json
+          curl https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/master/dist/secret-detection-report-format.json >> secrets_schema.json
+          curl https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/master/dist/container-scanning-report-format.json >> container_scanning_schema.json
+
+      - name: Test all SAST reports
+        run: |
+          SAST_FILES=$(find "tests/resources/test_sast" -type f -name "*.json")
+          echo $SAST_FILES
+          for sast_file in ${SAST_FILES[@]}; do
+            jsonschema -i $sast_file sast_schema.json
+          done
+      
+      - name: Test all Secrets reports
+        run: |
+          SECRETS_FILES=$(find "tests/resources/test_secrets" -type f -name "*.json")
+          echo $SECRETS_FILES
+          for secrets_file in ${SECRETS_FILES[@]}; do
+            jsonschema -i $secrets_file secrets_schema.json
+          done
+
+      - name: Test all Container Scanning reports
+        run: |
+          CONTAINER_FILES=$(find "tests/resources/test_container_scanning" -type f -name "*.json")
+          echo $CONTAINER_FILES
+          for container_file in ${CONTAINER_FILES[@]}; do
+            jsonschema -i $container_file container_scanning_schema.json
+          done
