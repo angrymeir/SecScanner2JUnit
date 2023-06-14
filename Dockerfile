@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 ARG VERSION
 
 RUN pip3 install secscanner2junit==$VERSION
