@@ -117,7 +117,7 @@ brakeman-sast-convert:
 container_scanning:
   artifacts:
     paths:
-      - gl-container-scanning-report-format.json
+      - gl-container-scanning-report.json
     when: always
 
 container_scanning-convert:
