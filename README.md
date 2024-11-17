@@ -145,6 +145,7 @@ sast:
       value: "2555"
     - type: "find_sec_bugs_type"
       value: "SPRING_ENDPOINT"
+    - id: "db914ce5737b49650ae650fc3b0fe38a531eadd8ea780f48a013419c4adec7f0"
 ```
 
 And now you can modify execution commands as follows:
