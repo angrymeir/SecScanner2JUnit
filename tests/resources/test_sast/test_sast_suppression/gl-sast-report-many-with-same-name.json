@@ -7,7 +7,7 @@
       "name": "Spring CSRF unrestricted RequestMapping",
       "message": "Spring CSRF unrestricted RequestMapping",
       "description": "Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks",
-      "cve": "86d80cd1d198812fc1ba6860a9e965e1:SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING:src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java:23",
+      "cve": "86d80cd1d198812fc1ba6860a9e965e1:SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING:src/main/java/pl/com/abc/example/springbootabcexample/PingController.java:23",
       "severity": "Medium",
       "confidence": "High",
       "scanner": {
@@ -15,9 +15,9 @@
         "name": "Find Security Bugs"
       },
       "location": {
-        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java",
+        "file": "src/main/java/pl/com/abc/example/springbootabcexample/PingController.java",
         "start_line": 23,
-        "class": "pl.com.softnet.example.springbootsoftnetexample.PingController",
+        "class": "pl.com.abc.example.springbootabcexample.PingController",
         "method": "ping"
       },
       "identifiers": [
@@ -40,8 +40,8 @@
       "category": "sast",
       "name": "Found Spring endpoint",
       "message": "Found Spring endpoint",
-      "description": "pl.com.softnet.example.springbootsoftnetexample.PingController is a Spring endpoint (Controller)",
-      "cve": "21254b1dfdebd6b8bbd05e4ed8a960c3:SPRING_ENDPOINT:src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java:23",
+      "description": "pl.com.abc.example.springbootabcexample.PingController is a Spring endpoint (Controller)",
+      "cve": "21254b1dfdebd6b8bbd05e4ed8a960c3:SPRING_ENDPOINT:src/main/java/pl/com/abc/example/springbootabcexample/PingController.java:23",
       "severity": "Low",
       "confidence": "Low",
       "scanner": {
@@ -49,9 +49,9 @@
         "name": "Find Security Bugs"
       },
       "location": {
-        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java",
+        "file": "src/main/java/pl/com/abc/example/springbootabcexample/PingController.java",
         "start_line": 23,
-        "class": "pl.com.softnet.example.springbootsoftnetexample.PingController",
+        "class": "pl.com.abc.example.springbootabcexample.PingController",
         "method": "ping"
       },
       "identifiers": [
@@ -68,8 +68,8 @@
       "category": "sast",
       "name": "Found Spring endpoint",
       "message": "Found Spring endpoint",
-      "description": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController is a Spring endpoint (Controller)",
-      "cve": "62a35767e47f86da1958c888ab0ddb98:SPRING_ENDPOINT:src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java:16",
+      "description": "pl.com.abc.example.springbootabcexample.FakeErrorController is a Spring endpoint (Controller)",
+      "cve": "62a35767e47f86da1958c888ab0ddb98:SPRING_ENDPOINT:src/main/java/pl/com/abc/example/springbootabcexample/FakeErrorController.java:16",
       "severity": "Low",
       "confidence": "Low",
       "scanner": {
@@ -77,9 +77,9 @@
         "name": "Find Security Bugs"
       },
       "location": {
-        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java",
+        "file": "src/main/java/pl/com/abc/example/springbootabcexample/FakeErrorController.java",
         "start_line": 16,
-        "class": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController",
+        "class": "pl.com.abc.example.springbootabcexample.FakeErrorController",
         "method": "getDomainError"
       },
       "identifiers": [
@@ -97,7 +97,7 @@
       "name": "HTTP headers untrusted",
       "message": "HTTP headers untrusted",
       "description": "Request header can easily be altered by the client",
-      "cve": "6b0c63f9593aecd2ad80afdc4a85656d:SERVLET_HEADER:src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java:50",
+      "cve": "6b0c63f9593aecd2ad80afdc4a85656d:SERVLET_HEADER:src/main/java/pl/com/abc/example/springbootabcexample/PingController.java:50",
       "severity": "Low",
       "confidence": "Low",
       "scanner": {
@@ -105,9 +105,9 @@
         "name": "Find Security Bugs"
       },
       "location": {
-        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/PingController.java",
+        "file": "src/main/java/pl/com/abc/example/springbootabcexample/PingController.java",
         "start_line": 50,
-        "class": "pl.com.softnet.example.springbootsoftnetexample.PingController$IpAddressUtils",
+        "class": "pl.com.abc.example.springbootabcexample.PingController$IpAddressUtils",
         "method": "getIpAddressFromRequest"
       },
       "identifiers": [

@@ -2,15 +2,22 @@ from yaml import safe_load
 
 
 class Suppression:
-    def __init__(self, type, value):
+
+    def __init__(self,
+                 id: str | None = None,
+                 type: str | None = None,
+                 value: str | None = None):
+        self.id = id
         self.type = type
         self.value = value
 
     def __repr__(self):
-        return f"Suppression(type={self.type}, value={self.value})"
+        return f"Suppression(id={self.id}, type={self.type}, value={self.value})"
 
     def __eq__(self, other):
         if isinstance(other, Suppression):
+            if self.id is not None:
+                return self.id == other.id
             return self.type == other.type and self.value == other.value
 
         return False
@@ -36,9 +43,17 @@ class Config:
         return False
 
     def __is_vulnerability_suppressed(self, vulnerability):
-        for identifier in vulnerability['identifiers']:
-            if self.__is_identifier_suppressed(identifier):
-                return True
+        for suppression in self.suppressions:
+            if suppression is None:
+                return False
+
+            if suppression.id is not None:
+                return suppression.id == vulnerability['id']
+
+            for identifier in vulnerability['identifiers']:
+                if suppression.type == identifier['type'] and suppression.value == identifier['value']:
+                    return True
+
         return False
 
     def suppress(self, vulnerabilities):
@@ -91,6 +106,15 @@ def __get_suppressions(sast_yml_dict):
 
 def __get_suppression(suppression_yml_dict):
     try:
-        return Suppression(suppression_yml_dict['type'], suppression_yml_dict['value'])
+        return Suppression(__get_suppression_field(suppression_yml_dict, 'id'),
+                           __get_suppression_field(suppression_yml_dict, 'type'),
+                           __get_suppression_field(suppression_yml_dict, 'value'))
+    except KeyError:
+        return None
+
+
+def __get_suppression_field(suppression_yml_dict, key):
+    try:
+        return suppression_yml_dict[key]
     except KeyError:
         return None
