@@ -2,7 +2,11 @@ from yaml import safe_load
 
 
 class Suppression:
-    def __init__(self, id, type, value):
+
+    def __init__(self,
+                 id: str | None = None,
+                 type: str | None = None,
+                 value: str | None = None):
         self.id = id
         self.type = type
         self.value = value
