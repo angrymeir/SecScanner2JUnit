@@ -48,7 +48,8 @@ class Config:
                 return False
 
             if suppression.id is not None:
-                return suppression.id == vulnerability['id']
+                if suppression.id == vulnerability['id']:
+                    return True
 
             for identifier in vulnerability['identifiers']:
                 if suppression.type == identifier['type'] and suppression.value == identifier['value']:
