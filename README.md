@@ -174,3 +174,29 @@ secret_convert:
     reports:
       junit: gl-secret-detection-report.xml
 ```
+
+
+### Development
+
+Create Python Virtual Environment
+```bash
+python -m venv ./venv
+```
+
+Activate Python Virtual Environment
+```bash
+source ./venv/bin/activate
+```
+
+Install dependencies
+```bash
+poetry install
+```
+
+Run tests
+```bash
+poetry run pytest
+```
+
+
+

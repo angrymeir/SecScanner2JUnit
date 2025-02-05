@@ -44,6 +44,13 @@ def parse_arguments(args):
 
 
 def main(args=None):
+
+    print("-------------------------------------------------------------------------------")
+    print("-------- Hello! Project migrated to organisation https://logchange.dev --------")
+    print("--------    If you want to get new version change docker image to      --------")
+    print("--------                 logchange/secscanner2junit:latest             --------")
+    print("-------------------------------------------------------------------------------")
+
     if args is None:
         args = parse_arguments(sys.argv[1:])
     if args.config:
@@ -62,6 +69,12 @@ def main(args=None):
         raise NotImplementedError
     testsuite = parser.parse()
     save_junit_report(testsuite, args.output_file)
+
+    print("-------------------------------------------------------------------------------")
+    print("-------- Hello! Project migrated to organisation https://logchange.dev --------")
+    print("--------    If you want to get new version change docker image to      --------")
+    print("--------                 logchange/secscanner2junit:latest             --------")
+    print("-------------------------------------------------------------------------------")
 
 
 if __name__ == '__main__':

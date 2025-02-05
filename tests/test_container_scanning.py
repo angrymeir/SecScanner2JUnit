@@ -9,8 +9,8 @@ class TestContainerScanningParser(unittest.TestCase):
 
     def test_basic(self):
         # given:
-        input_report_path = "resources/test_container_scanning/test_basic/gl-container-scanning-report.json"
-        missing_config_path = "resources/test_container_scanning/test_basic/ss2ju-config.yml"
+        input_report_path = "tests/resources/test_container_scanning/test_basic/gl-container-scanning-report.json"
+        missing_config_path = "tests/resources/test_container_scanning/test_basic/ss2ju-config.yml"
 
         report = get_report(input_report_path)
         config = get_config(missing_config_path)
