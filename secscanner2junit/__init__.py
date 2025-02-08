@@ -45,11 +45,10 @@ def parse_arguments(args):
 
 def main(args=None):
 
-    print("-------------------------------------------------------------------------------")
-    print("-------- Hello! Project migrated to organisation https://logchange.dev --------")
-    print("--------    If you want to get new version change docker image to      --------")
-    print("--------                 logchange/secscanner2junit:latest             --------")
-    print("-------------------------------------------------------------------------------")
+    print("----------------------------------------------------------------------")
+    print("-------- Hello! Project maintained by logchange organisation  --------")
+    print("--------             Visit: https://logchange.dev             --------")
+    print("----------------------------------------------------------------------")
 
     if args is None:
         args = parse_arguments(sys.argv[1:])
@@ -70,11 +69,10 @@ def main(args=None):
     testsuite = parser.parse()
     save_junit_report(testsuite, args.output_file)
 
-    print("-------------------------------------------------------------------------------")
-    print("-------- Hello! Project migrated to organisation https://logchange.dev --------")
-    print("--------    If you want to get new version change docker image to      --------")
-    print("--------                 logchange/secscanner2junit:latest             --------")
-    print("-------------------------------------------------------------------------------")
+    print("----------------------------------------------------------------------")
+    print("-------- Hello! Project maintained by logchange organisation  --------")
+    print("--------             Visit: https://logchange.dev             --------")
+    print("----------------------------------------------------------------------")
 
 
 if __name__ == '__main__':
