@@ -1,0 +1,1283 @@
+{
+  "version": "15.0.6",
+  "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v15.0.6/dist/dependency-scanning-report-format.json?ref_type=tags",
+  "scan": {
+    "scanner": {
+      "id": "org.owasp.dependency-check",
+      "name": "Dependency-Check Core",
+      "version": "9.1.0",
+      "vendor": {
+        "name": "OWASP"
+      },
+      "url": "https://github.com/jeremylong/DependencyCheck/"
+    },
+    "analyzer": {
+      "id": "org.owasp.dependency-check",
+      "name": "Dependency-Check Core",
+      "version": "9.1.0",
+      "vendor": {
+        "name": "OWASP"
+      },
+      "url": "https://github.com/jeremylong/DependencyCheck/"
+    },
+    "end_time": "2024-04-10T13:48:33",
+    "start_time": "2024-04-10T13:48:33",
+    "status": "success",
+    "type": "dependency_scanning"
+  },
+  "vulnerabilities": [
+    {
+      "id": "CVE-2023-33202",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2023-33202",
+          "value": "f81e5af49571a9d5a109a88f239a73ce87055417",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-33202"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/org\/bouncycastle\/bcpkix-jdk15on\/1.70\/bcpkix-jdk15on-1.70.jar",
+        "dependency": {
+          "package": {
+            "name": "org.bouncycastle:bcpkix-jdk15on"
+          },
+          "version": "1.70"
+        }
+      },
+      "name": "CVE-2023-33202",
+      "description": "Bouncy Castle for Java before 1.73 contains a potential Denial of Service (DoS) issue within the Bouncy Castle org.bouncycastle.openssl.PEMParser class. This class parses OpenSSL PEM encoded streams containing X.509 certificates, PKCS8 encoded keys, and PKCS7 objects. Parsing a file that has crafted ASN.1 data through the PEMParser causes an OutOfMemoryError, which can enable a denial of service attack. (For users of the FIPS Java API: BC-FJA 1.0.2.3 and earlier are affected; BC-FJA 1.0.2.4 is fixed.)",
+      "severity": "Medium",
+      "links": [
+        {
+          "name": "[CVE-2023-33202] CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')",
+          "url": "https:\/\/ossindex.sonatype.org\/vulnerability\/CVE-2023-33202?component-type=maven&component-name=org.bouncycastle%2Fbcprov-jdk15on&utm_source=dependency-check&utm_medium=integration&utm_content=9.1.0"
+        },
+        {
+          "name": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33202",
+          "url": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33202"
+        },
+        {
+          "name": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202",
+          "url": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202"
+        },
+        {
+          "url": "https:\/\/security.netapp.com\/advisory\/ntap-20240125-0001\/"
+        },
+        {
+          "name": "EXPLOIT,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202"
+        },
+        {
+          "name": "PRODUCT",
+          "url": "https:\/\/bouncycastle.org"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-33202",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2023-33202",
+          "value": "4636a0d01f74acaf28082fb62b317f1080118371",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-33202"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/org\/bouncycastle\/bcprov-jdk15on\/1.70\/bcprov-jdk15on-1.70.jar",
+        "dependency": {
+          "package": {
+            "name": "org.bouncycastle:bcprov-jdk15on"
+          },
+          "version": "1.70"
+        }
+      },
+      "name": "CVE-2023-33202",
+      "description": "Bouncy Castle for Java before 1.73 contains a potential Denial of Service (DoS) issue within the Bouncy Castle org.bouncycastle.openssl.PEMParser class. This class parses OpenSSL PEM encoded streams containing X.509 certificates, PKCS8 encoded keys, and PKCS7 objects. Parsing a file that has crafted ASN.1 data through the PEMParser causes an OutOfMemoryError, which can enable a denial of service attack. (For users of the FIPS Java API: BC-FJA 1.0.2.3 and earlier are affected; BC-FJA 1.0.2.4 is fixed.)",
+      "severity": "Medium",
+      "links": [
+        {
+          "name": "[CVE-2023-33202] CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')",
+          "url": "https:\/\/ossindex.sonatype.org\/vulnerability\/CVE-2023-33202?component-type=maven&component-name=org.bouncycastle%2Fbcprov-jdk15on&utm_source=dependency-check&utm_medium=integration&utm_content=9.1.0"
+        },
+        {
+          "name": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33202",
+          "url": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33202"
+        },
+        {
+          "name": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202",
+          "url": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202"
+        },
+        {
+          "url": "https:\/\/security.netapp.com\/advisory\/ntap-20240125-0001\/"
+        },
+        {
+          "name": "EXPLOIT,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202"
+        },
+        {
+          "name": "PRODUCT",
+          "url": "https:\/\/bouncycastle.org"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-33201",
+      "identifiers": [
+        {
+          "type": "OSSINDEX",
+          "name": "CVE-2023-33201",
+          "value": "4636a0d01f74acaf28082fb62b317f1080118371"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/org\/bouncycastle\/bcprov-jdk15on\/1.70\/bcprov-jdk15on-1.70.jar",
+        "dependency": {
+          "package": {
+            "name": "org.bouncycastle:bcprov-jdk15on"
+          },
+          "version": "1.70"
+        }
+      },
+      "name": "CVE-2023-33201",
+      "description": "Bouncy Castle For Java before 1.74 is affected by an LDAP injection vulnerability. The vulnerability only affects applications that use an LDAP CertStore from Bouncy Castle to validate X.509 certificates. During the certificate validation process, Bouncy Castle inserts the certificate's Subject Name into an LDAP search filter without any escaping, which leads to an LDAP injection vulnerability.",
+      "severity": "Medium",
+      "links": [
+        {
+          "name": "[CVE-2023-33201] CWE-295: Improper Certificate Validation",
+          "url": "https:\/\/ossindex.sonatype.org\/vulnerability\/CVE-2023-33201?component-type=maven&component-name=org.bouncycastle%2Fbcprov-jdk15on&utm_source=dependency-check&utm_medium=integration&utm_content=9.1.0"
+        },
+        {
+          "name": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33201",
+          "url": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33201"
+        },
+        {
+          "name": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33201",
+          "url": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33201"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-33202",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2023-33202",
+          "value": "54280e7195a7430d7911ded93fc01e07300b9526",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-33202"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/org\/bouncycastle\/bcutil-jdk15on\/1.70\/bcutil-jdk15on-1.70.jar",
+        "dependency": {
+          "package": {
+            "name": "org.bouncycastle:bcutil-jdk15on"
+          },
+          "version": "1.70"
+        }
+      },
+      "name": "CVE-2023-33202",
+      "description": "Bouncy Castle for Java before 1.73 contains a potential Denial of Service (DoS) issue within the Bouncy Castle org.bouncycastle.openssl.PEMParser class. This class parses OpenSSL PEM encoded streams containing X.509 certificates, PKCS8 encoded keys, and PKCS7 objects. Parsing a file that has crafted ASN.1 data through the PEMParser causes an OutOfMemoryError, which can enable a denial of service attack. (For users of the FIPS Java API: BC-FJA 1.0.2.3 and earlier are affected; BC-FJA 1.0.2.4 is fixed.)",
+      "severity": "Medium",
+      "links": [
+        {
+          "name": "[CVE-2023-33202] CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')",
+          "url": "https:\/\/ossindex.sonatype.org\/vulnerability\/CVE-2023-33202?component-type=maven&component-name=org.bouncycastle%2Fbcprov-jdk15on&utm_source=dependency-check&utm_medium=integration&utm_content=9.1.0"
+        },
+        {
+          "name": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33202",
+          "url": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-33202"
+        },
+        {
+          "name": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202",
+          "url": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202"
+        },
+        {
+          "url": "https:\/\/security.netapp.com\/advisory\/ntap-20240125-0001\/"
+        },
+        {
+          "name": "EXPLOIT,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/github.com\/bcgit\/bc-java\/wiki\/CVE-2023-33202"
+        },
+        {
+          "name": "PRODUCT",
+          "url": "https:\/\/bouncycastle.org"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-2976",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2023-2976",
+          "value": "60458f877d055d0c9114d9e1a2efb737b4bc282c",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2976"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/com\/google\/guava\/guava\/31.1-jre\/guava-31.1-jre.jar",
+        "dependency": {
+          "package": {
+            "name": "com.google.guava:guava"
+          },
+          "version": "31.1-jre"
+        }
+      },
+      "name": "CVE-2023-2976",
+      "description": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.\n\nEven though the security vulnerability is fixed in version 32.0.0, we recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.\n\n",
+      "severity": "High",
+      "links": [
+        {
+          "name": "[CVE-2023-2976] CWE-552: Files or Directories Accessible to External Parties",
+          "url": "https:\/\/ossindex.sonatype.org\/vulnerability\/CVE-2023-2976?component-type=maven&component-name=com.google.guava%2Fguava&utm_source=dependency-check&utm_medium=integration&utm_content=9.1.0"
+        },
+        {
+          "name": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-2976",
+          "url": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2023-2976"
+        },
+        {
+          "name": "https:\/\/github.com\/google\/guava\/issues\/2575",
+          "url": "https:\/\/github.com\/google\/guava\/issues\/2575"
+        },
+        {
+          "name": "https:\/\/github.com\/google\/guava\/releases\/tag\/v32.0.0",
+          "url": "https:\/\/github.com\/google\/guava\/releases\/tag\/v32.0.0"
+        },
+        {
+          "url": "https:\/\/security.netapp.com\/advisory\/ntap-20230818-0008\/"
+        },
+        {
+          "url": "https:\/\/www.intel.com\/content\/www\/us\/en\/security-center\/advisory\/intel-sa-01006.html"
+        },
+        {
+          "name": "ISSUE_TRACKING,PATCH,VENDOR_ADVISORY",
+          "url": "https:\/\/github.com\/google\/guava\/issues\/2575"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2020-8908",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2020-8908",
+          "value": "60458f877d055d0c9114d9e1a2efb737b4bc282c",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-8908"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/com\/google\/guava\/guava\/31.1-jre\/guava-31.1-jre.jar",
+        "dependency": {
+          "package": {
+            "name": "com.google.guava:guava"
+          },
+          "version": "31.1-jre"
+        }
+      },
+      "name": "CVE-2020-8908",
+      "description": "A temp directory creation vulnerability exists in all versions of Guava, allowing an attacker with access to the machine to potentially access data in a temporary directory created by the Guava API com.google.common.io.Files.createTempDir(). By default, on unix-like systems, the created directory is world-readable (readable by an attacker with access to the system). The method in question has been marked @Deprecated in versions 30.0 and later and should not be used. For Android developers, we recommend choosing a temporary directory API provided by Android, such as context.getCacheDir(). For other Java developers, we recommend migrating to the Java 7 API java.nio.file.Files.createTempDirectory() which explicitly configures permissions of 700, or configuring the Java runtime's java.io.tmpdir system property to point to a location whose permissions are appropriately configured.\n\n",
+      "severity": "Low",
+      "links": [
+        {
+          "name": "[CVE-2020-8908] CWE-379: Creation of Temporary File in Directory with Incorrect Permissions",
+          "url": "https:\/\/ossindex.sonatype.org\/vulnerability\/CVE-2020-8908?component-type=maven&component-name=com.google.guava%2Fguava&utm_source=dependency-check&utm_medium=integration&utm_content=9.1.0"
+        },
+        {
+          "name": "https:\/\/github.com\/google\/guava\/issues\/4011",
+          "url": "https:\/\/github.com\/google\/guava\/issues\/4011"
+        },
+        {
+          "name": "EXPLOIT,PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/snyk.io\/vuln\/SNYK-JAVA-COMGOOGLEGUAVA-1015415"
+        },
+        {
+          "name": "ISSUE_TRACKING,PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/github.com\/google\/guava\/issues\/4011"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/github.com\/google\/guava\/commit\/fec0dbc4634006a6162cfd4d0d09c962073ddf40"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/\/security-alerts\/cpujul2021.html"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/security-alerts\/cpuApr2021.html"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/security-alerts\/cpuapr2022.html"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/security-alerts\/cpuoct2021.html"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r007add131977f4f576c232b25e024249a3d16f66aad14a4b52819d21%40%3Ccommon-issues.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r07ed3e4417ad043a27bee7bb33322e9bfc7d7e6d1719b8e3dfd95c14%40%3Cdev.drill.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r161b87f8037bbaff400194a63cd2016c9a69f5949f06dcc79beeab54%40%3Cdev.drill.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r215b3d50f56faeb2f9383505f3e62faa9f549bb23e8a9848b78a968e%40%3Ccommits.ws.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r294be9d31c0312d2c0837087204b5d4bf49d0552890e6eec716fa6a6%40%3Cyarn-issues.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r2fe45d96eea8434b91592ca08109118f6308d60f6d0e21d52438cfb4%40%3Cdev.drill.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r3c3b33ee5bef0c67391d27a97cbfd89d44f328cf072b601b58d4e748%40%3Ccommits.pulsar.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r3dd8881de891598d622227e9840dd7c2ef1d08abbb49e9690c7ae1bc%40%3Cissues.geode.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r4776f62dfae4a0006658542f43034a7fc199350e35a66d4e18164ee6%40%3Ccommits.cxf.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r49549a8322f62cd3acfa4490d25bfba0be04f3f9ff4d14fe36199d27%40%3Cyarn-dev.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r58a8775205ab1839dba43054b09a9ab3b25b423a4170b2413c4067ac%40%3Ccommon-issues.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r5b3d93dfdfb7708e796e8762ab40edbde8ff8add48aba53e5ea26f44%40%3Cissues.geode.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r5d61b98ceb7bba939a651de5900dbd67be3817db6bfcc41c6e04e199%40%3Cyarn-issues.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r6874dfe26eefc41b7c9a5e4a0487846fc4accf8c78ff948b24a1104a%40%3Cdev.drill.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r68d86f4b06c808204f62bcb254fcb5b0432528ee8d37a07ef4bc8222%40%3Ccommits.ws.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r79e47ed555bdb1180e528420a7a2bb898541367a29a3bc6bbf0baf2c%40%3Cissues.hive.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r7b0e81d8367264d6cad98766a469d64d11248eb654417809bfdacf09%40%3Cyarn-issues.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/r841c5e14e1b55281523ebcde661ece00b38a0569e00ef5e12bd5f6ba%40%3Cissues.maven.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/ra7ab308481ee729f998691e8e3e02e93b1dedfc98f6b1cd3d86923b3%40%3Cyarn-issues.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rb2364f4cf4d274eab5a7ecfaf64bf575cedf8b0173551997c749d322%40%3Cgitbox.hive.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rb8c0f1b7589864396690fe42a91a71dea9412e86eec66dc85bbacaaf%40%3Ccommits.cxf.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rbc7642b9800249553f13457e46b813bea1aec99d2bc9106510e00ff3%40%3Ctorque-dev.db.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rc2dbc4633a6eea1fcbce6831876cfa17b73759a98c65326d1896cb1a%40%3Ctorque-dev.db.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rc607bc52f3507b8b9c28c6a747c3122f51ac24afe80af2a670785b97%40%3Cissues.geode.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rcafc3a637d82bdc9a24036b2ddcad1e519dd0e6f848fcc3d606fd78f%40%3Cdev.hive.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rd01f5ff0164c468ec7abc96ff7646cea3cce6378da2e4aa29c6bcb95%40%3Cgithub.arrow.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rd2704306ec729ccac726e50339b8a8f079515cc29ccb77713b16e7c5%40%3Cissues.hive.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rd5d58088812cf8e677d99b07f73c654014c524c94e7fedbdee047604%40%3Ctorque-dev.db.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rd7e12d56d49d73e2b8549694974b07561b79b05455f7f781954231bf%40%3Cdev.pig.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/re120f6b3d2f8222121080342c5801fdafca2f5188ceeb3b49c8a1d27%40%3Cyarn-issues.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/reebbd63c25bc1a946caa419cec2be78079f8449d1af48e52d47c9e85%40%3Cissues.geode.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rf00b688ffa620c990597f829ff85fdbba8bf73ee7bfb34783e1f0d4e%40%3Cyarn-dev.hadoop.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rf9f0fa84b8ae1a285f0210bafec6de2a9eba083007d04640b82aa625%40%3Cissues.geode.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.apache.org\/thread.html\/rfc27e2727a20a574f39273e0432aa97486a332f9b3068f6ac1346594%40%3Cdev.myfaces.apache.org%3E"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/security.netapp.com\/advisory\/ntap-20220210-0003\/"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/security-alerts\/cpujan2022.html"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2020-25638",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2020-25638",
+          "value": "8ba469a4749447a8e9a04f229c8017f60f9a04c9",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-25638"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/org\/hibernate\/hibernate-core\/4.3.5.Final\/hibernate-core-4.3.5.Final.jar",
+        "dependency": {
+          "package": {
+            "name": "org.hibernate:hibernate-core"
+          },
+          "version": "4.3.5.Final"
+        }
+      },
+      "name": "CVE-2020-25638",
+      "description": "A flaw was found in hibernate-core in versions prior to and including 5.4.23.Final. A SQL injection in the implementation of the JPA Criteria API can permit unsanitized literals when a literal is used in the SQL comments of the query. This flaw could allow an attacker to access unauthorized information or possibly conduct further attacks. The highest threat from this vulnerability is to data confidentiality and integrity.",
+      "severity": "High",
+      "links": [
+        {
+          "name": "[CVE-2020-25638] CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+          "url": "https:\/\/ossindex.sonatype.org\/vulnerability\/CVE-2020-25638?component-type=maven&component-name=org.hibernate%2Fhibernate-core&utm_source=dependency-check&utm_medium=integration&utm_content=9.1.0"
+        },
+        {
+          "name": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2020-25638",
+          "url": "http:\/\/web.nvd.nist.gov\/view\/vuln\/detail?vulnId=CVE-2020-25638"
+        },
+        {
+          "name": "https:\/\/bugzilla.redhat.com\/show_bug.cgi?id=1881353",
+          "url": "https:\/\/bugzilla.redhat.com\/show_bug.cgi?id=1881353"
+        },
+        {
+          "name": "https:\/\/hibernate.atlassian.net\/browse\/HHH-14225",
+          "url": "https:\/\/hibernate.atlassian.net\/browse\/HHH-14225"
+        },
+        {
+          "url": "https:\/\/lists.apache.org\/thread.html\/r833c1276e41334fa675848a08daf0c61f39009f9f9a400d9f7006d44%40%3Cdev.turbine.apache.org%3E"
+        },
+        {
+          "url": "https:\/\/lists.apache.org\/thread.html\/rf2378209c676a28b71f9b604a3b3517c448540b85367160e558ef9df%40%3Ccommits.turbine.apache.org%3E"
+        },
+        {
+          "name": "ISSUE_TRACKING,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/bugzilla.redhat.com\/show_bug.cgi?id=1881353"
+        },
+        {
+          "name": "MAILING_LIST,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/lists.debian.org\/debian-lts-announce\/2021\/01\/msg00000.html"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/\/security-alerts\/cpujul2021.html"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/security-alerts\/cpuapr2022.html"
+        },
+        {
+          "name": "PATCH,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.oracle.com\/security-alerts\/cpujul2022.html"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/www.debian.org\/security\/2021\/dsa-4908"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2019-14900",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2019-14900",
+          "value": "8ba469a4749447a8e9a04f229c8017f60f9a04c9",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-14900"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/org\/hibernate\/hibernate-core\/4.3.5.Final\/hibernate-core-4.3.5.Final.jar",
+        "dependency": {
+          "package": {
+            "name": "org.hibernate:hibernate-core"
+          },
+          "version": "4.3.5.Final"
+        }
+      },
+      "name": "CVE-2019-14900",
+      "description": "A flaw was found in Hibernate ORM in versions before 5.3.18, 5.4.18 and 5.5.0.Beta1. A SQL injection in the implementation of the JPA Criteria API can permit unsanitized literals when a literal is used in the SELECT or GROUP BY parts of the query. This flaw could allow an attacker to access unauthorized information or possibly conduct further attacks.",
+      "severity": "Medium",
+      "links": [
+        {
+          "url": "https:\/\/lists.apache.org\/thread.html\/r833c1276e41334fa675848a08daf0c61f39009f9f9a400d9f7006d44%40%3Cdev.turbine.apache.org%3E"
+        },
+        {
+          "name": "ISSUE_TRACKING,THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/bugzilla.redhat.com\/show_bug.cgi?id=1666499"
+        },
+        {
+          "name": "THIRD_PARTY_ADVISORY",
+          "url": "https:\/\/security.netapp.com\/advisory\/ntap-20220210-0020\/"
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-35116",
+      "identifiers": [
+        {
+          "type": "NVD",
+          "name": "CVE-2023-35116",
+          "value": "560309fc381f77d4d15c4a4cdaa0db5025c4fd13",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-35116"
+        }
+      ],
+      "location": {
+        "file": "\/builds\/test\/test_project\/.m2\/repository\/com\/fasterxml\/jackson\/core\/jackson-databind\/2.15.4\/jackson-databind-2.15.4.jar",
+        "dependency": {
+          "package": {
+            "name": "com.fasterxml.jackson.core:jackson-databind"
+          },
+          "version": "2.15.4"
+        }
+      },
+      "name": "CVE-2023-35116",
+      "description": "jackson-databind through 2.15.2 allows attackers to cause a denial of service or other unspecified impact via a crafted object that uses cyclic dependencies. NOTE: the vendor's perspective is that this is not a valid vulnerability report, because the steps of constructing a cyclic data structure and trying to serialize it cannot be achieved by an external attacker.",
+      "severity": "Medium",
+      "links": [
+        {
+          "name": "ISSUE_TRACKING",
+          "url": "https:\/\/github.com\/FasterXML\/jackson-databind\/issues\/3972"
+        }
+      ]
+    }
+  ],
+  "dependency_files": [
+    {
+      "path": "pom.xml",
+      "package_manager": "maven",
+      "dependencies": [
+        {
+          "package": {
+            "name": "org.hdrhistogram:HdrHistogram"
+          },
+          "version": "2.1.12"
+        },
+        {
+          "package": {
+            "name": "com.zaxxer:HikariCP"
+          },
+          "version": "5.0.1"
+        },
+        {
+          "package": {
+            "name": "org.latencyutils:LatencyUtils"
+          },
+          "version": "2.0.3"
+        },
+        {
+          "package": {
+            "name": "org.antlr:ST4"
+          },
+          "version": "4.0.8"
+        },
+        {
+          "package": {
+            "name": "com.vaadin.external.google:android-json"
+          },
+          "version": "0.0.20131108.vaadin1"
+        },
+        {
+          "package": {
+            "name": "antlr:antlr"
+          },
+          "version": "2.7.7"
+        },
+        {
+          "package": {
+            "name": "org.antlr:antlr-runtime"
+          },
+          "version": "3.5.2"
+        },
+        {
+          "package": {
+            "name": "org.abego.treelayout:org.abego.treelayout.core"
+          },
+          "version": "1.0.1"
+        },
+        {
+          "package": {
+            "name": "org.antlr:antlr4-runtime"
+          },
+          "version": "4.5.1"
+        },
+        {
+          "package": {
+            "name": "org.antlr:antlr4"
+          },
+          "version": "4.5.1"
+        },
+        {
+          "package": {
+            "name": "de.vandermeer:ascii-utf-themes"
+          },
+          "version": "0.0.1"
+        },
+        {
+          "package": {
+            "name": "de.vandermeer:asciitable"
+          },
+          "version": "0.3.2"
+        },
+        {
+          "package": {
+            "name": "org.bouncycastle:bcpkix-jdk15on"
+          },
+          "version": "1.70"
+        },
+        {
+          "package": {
+            "name": "org.bouncycastle:bcprov-jdk15on"
+          },
+          "version": "1.70"
+        },
+        {
+          "package": {
+            "name": "org.bouncycastle:bcutil-jdk15on"
+          },
+          "version": "1.70"
+        },
+        {
+          "package": {
+            "name": "de.vandermeer:char-translation"
+          },
+          "version": "0.0.2"
+        },
+        {
+          "package": {
+            "name": "org.checkerframework:checker-qual"
+          },
+          "version": "3.12.0"
+        },
+        {
+          "package": {
+            "name": "org.checkerframework:checker-qual"
+          },
+          "version": "3.31.0"
+        },
+        {
+          "package": {
+            "name": "com.fasterxml:classmate"
+          },
+          "version": "1.6.0"
+        },
+        {
+          "package": {
+            "name": "commons-beanutils:commons-beanutils"
+          },
+          "version": "1.9.4"
+        },
+        {
+          "package": {
+            "name": "commons-collections:commons-collections"
+          },
+          "version": "3.2.2"
+        },
+        {
+          "package": {
+            "name": "org.apache.commons:commons-collections4"
+          },
+          "version": "4.4"
+        },
+        {
+          "package": {
+            "name": "commons-digester:commons-digester"
+          },
+          "version": "2.1"
+        },
+        {
+          "package": {
+            "name": "commons-lang:commons-lang"
+          },
+          "version": "2.6"
+        },
+        {
+          "package": {
+            "name": "org.apache.commons:commons-lang3"
+          },
+          "version": "3.13.0"
+        },
+        {
+          "package": {
+            "name": "commons-logging:commons-logging"
+          },
+          "version": "1.2"
+        },
+        {
+          "package": {
+            "name": "commons-logging:commons-logging"
+          },
+          "version": "1.3.0"
+        },
+        {
+          "package": {
+            "name": "org.apache.commons:commons-math3"
+          },
+          "version": "3.5"
+        },
+        {
+          "package": {
+            "name": "org.apache.commons:commons-text"
+          },
+          "version": "1.10.0"
+        },
+        {
+          "package": {
+            "name": "org.apache.commons:commons-text"
+          },
+          "version": "1.11.0"
+        },
+        {
+          "package": {
+            "name": "commons-validator:commons-validator"
+          },
+          "version": "1.8.0"
+        },
+        {
+          "package": {
+            "name": "org.dom4j:dom4j"
+          },
+          "version": "2.1.3"
+        },
+        {
+          "package": {
+            "name": "com.google.errorprone:error_prone_annotations"
+          },
+          "version": "2.11.0"
+        },
+        {
+          "package": {
+            "name": "com.google.guava:failureaccess"
+          },
+          "version": "1.0.1"
+        },
+        {
+          "package": {
+            "name": "com.google.code.gson:gson"
+          },
+          "version": "2.10.1"
+        },
+        {
+          "package": {
+            "name": "com.google.guava:guava"
+          },
+          "version": "31.1-jre"
+        },
+        {
+          "package": {
+            "name": "com.caucho:hessian"
+          },
+          "version": "4.0.7"
+        },
+        {
+          "package": {
+            "name": "org.hibernate.common:hibernate-commons-annotations"
+          },
+          "version": "4.0.4.Final"
+        },
+        {
+          "package": {
+            "name": "org.hibernate:hibernate-core"
+          },
+          "version": "4.3.5.Final"
+        },
+        {
+          "package": {
+            "name": "org.hibernate.javax.persistence:hibernate-jpa-2.1-api"
+          },
+          "version": "1.0.0.Final"
+        },
+        {
+          "package": {
+            "name": "org.hibernate.validator:hibernate-validator"
+          },
+          "version": "8.0.1.Final"
+        },
+        {
+          "package": {
+            "name": "dev.logchange.hofund:hofund-core"
+          },
+          "version": "0.6.0"
+        },
+        {
+          "package": {
+            "name": "dev.logchange.hofund:hofund-spring"
+          },
+          "version": "0.6.0"
+        },
+        {
+          "package": {
+            "name": "dev.logchange.hofund:hofund-spring-boot-autoconfigure"
+          },
+          "version": "0.6.0"
+        },
+        {
+          "package": {
+            "name": "dev.logchange.hofund:hofund-spring-boot-starter"
+          },
+          "version": "0.6.0"
+        },
+        {
+          "package": {
+            "name": "org.apache.httpcomponents.client5:httpclient5"
+          },
+          "version": "5.2.3"
+        },
+        {
+          "package": {
+            "name": "org.apache.httpcomponents.core5:httpcore5"
+          },
+          "version": "5.2.4"
+        },
+        {
+          "package": {
+            "name": "org.apache.httpcomponents.core5:httpcore5-h2"
+          },
+          "version": "5.2.4"
+        },
+        {
+          "package": {
+            "name": "com.google.j2objc:j2objc-annotations"
+          },
+          "version": "1.3"
+        },
+        {
+          "package": {
+            "name": "com.fasterxml.jackson.core:jackson-core"
+          },
+          "version": "2.15.4"
+        },
+        {
+          "package": {
+            "name": "com.fasterxml.jackson.core:jackson-databind"
+          },
+          "version": "2.15.4"
+        },
+        {
+          "package": {
+            "name": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml"
+          },
+          "version": "2.15.4"
+        },
+        {
+          "package": {
+            "name": "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+          },
+          "version": "2.17.0"
+        },
+        {
+          "package": {
+            "name": "jakarta.activation:jakarta.activation-api"
+          },
+          "version": "2.1.3"
+        },
+        {
+          "package": {
+            "name": "jakarta.annotation:jakarta.annotation-api"
+          },
+          "version": "2.1.1"
+        },
+        {
+          "package": {
+            "name": "jakarta.validation:jakarta.validation-api"
+          },
+          "version": "3.0.2"
+        },
+        {
+          "package": {
+            "name": "jakarta.xml.bind:jakarta.xml.bind-api"
+          },
+          "version": "4.0.2"
+        },
+        {
+          "package": {
+            "name": "org.jboss:jandex"
+          },
+          "version": "1.1.0.Final"
+        },
+        {
+          "package": {
+            "name": "org.javassist:javassist"
+          },
+          "version": "3.18.1-GA"
+        },
+        {
+          "package": {
+            "name": "javax.activation:javax.activation-api"
+          },
+          "version": "1.2.0"
+        },
+        {
+          "package": {
+            "name": "javax.xml.bind:jaxb-api"
+          },
+          "version": "2.3.1"
+        },
+        {
+          "package": {
+            "name": "org.jboss.logging:jboss-logging"
+          },
+          "version": "3.5.3.Final"
+        },
+        {
+          "package": {
+            "name": "org.jboss.logging:jboss-logging-annotations"
+          },
+          "version": "1.2.0.Beta1"
+        },
+        {
+          "package": {
+            "name": "org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec"
+          },
+          "version": "1.0.0.Final"
+        },
+        {
+          "package": {
+            "name": "com.github.stephenc.jcip:jcip-annotations"
+          },
+          "version": "1.0-1"
+        },
+        {
+          "package": {
+            "name": "io.jsonwebtoken:jjwt"
+          },
+          "version": "0.12.5"
+        },
+        {
+          "package": {
+            "name": "io.jsonwebtoken:jjwt-api"
+          },
+          "version": "0.12.5"
+        },
+        {
+          "package": {
+            "name": "io.jsonwebtoken:jjwt-impl"
+          },
+          "version": "0.12.5"
+        },
+        {
+          "package": {
+            "name": "io.jsonwebtoken:jjwt-jackson"
+          },
+          "version": "0.12.5"
+        },
+        {
+          "package": {
+            "name": "org.joda:joda-money"
+          },
+          "version": "1.0.4"
+        },
+        {
+          "package": {
+            "name": "joda-time:joda-time"
+          },
+          "version": "2.7"
+        },
+        {
+          "package": {
+            "name": "javax.servlet.jsp:jsp-api"
+          },
+          "version": "2.1"
+        },
+        {
+          "package": {
+            "name": "com.google.code.findbugs:jsr305"
+          },
+          "version": "3.0.2"
+        },
+        {
+          "package": {
+            "name": "javax.servlet.jsp.jstl:jstl-api"
+          },
+          "version": "1.2"
+        },
+        {
+          "package": {
+            "name": "org.slf4j:jul-to-slf4j"
+          },
+          "version": "2.0.12"
+        },
+        {
+          "package": {
+            "name": "com.googlecode.libphonenumber:libphonenumber"
+          },
+          "version": "8.13.34"
+        },
+        {
+          "package": {
+            "name": "org.liquibase:liquibase-core"
+          },
+          "version": "4.27.0"
+        },
+        {
+          "package": {
+            "name": "com.google.guava:listenablefuture"
+          },
+          "version": "9999.0-empty-to-avoid-conflict-with-guava"
+        },
+        {
+          "package": {
+            "name": "org.apache.logging.log4j:log4j-api"
+          },
+          "version": "2.21.1"
+        },
+        {
+          "package": {
+            "name": "org.apache.logging.log4j:log4j-to-slf4j"
+          },
+          "version": "2.21.1"
+        },
+        {
+          "package": {
+            "name": "ch.qos.logback:logback-core"
+          },
+          "version": "1.4.14"
+        },
+        {
+          "package": {
+            "name": "org.projectlombok:lombok"
+          },
+          "version": "1.18.32"
+        },
+        {
+          "package": {
+            "name": "io.micrometer:micrometer-commons"
+          },
+          "version": "1.12.4"
+        },
+        {
+          "package": {
+            "name": "io.micrometer:micrometer-core"
+          },
+          "version": "1.12.4"
+        },
+        {
+          "package": {
+            "name": "io.micrometer:micrometer-jakarta9"
+          },
+          "version": "1.12.4"
+        },
+        {
+          "package": {
+            "name": "io.micrometer:micrometer-observation"
+          },
+          "version": "1.12.4"
+        },
+        {
+          "package": {
+            "name": "io.micrometer:micrometer-registry-prometheus"
+          },
+          "version": "1.12.4"
+        },
+        {
+          "package": {
+            "name": "com.nimbusds:nimbus-jose-jwt"
+          },
+          "version": "9.37.3"
+        },
+        {
+          "package": {
+            "name": "com.oracle.database.jdbc:ojdbc8"
+          },
+          "version": "21.9.0.0"
+        },
+        {
+          "package": {
+            "name": "com.opencsv:opencsv"
+          },
+          "version": "5.9"
+        },
+        {
+          "package": {
+            "name": "com.oracle.database.nls:orai18n"
+          },
+          "version": "21.9.0.0"
+        },
+        {
+          "package": {
+            "name": "org.postgresql:postgresql"
+          },
+          "version": "42.6.2"
+        },
+        {
+          "package": {
+            "name": "io.prometheus:simpleclient"
+          },
+          "version": "0.16.0"
+        },
+        {
+          "package": {
+            "name": "de.vandermeer:skb-interfaces"
+          },
+          "version": "0.0.1"
+        },
+        {
+          "package": {
+            "name": "org.slf4j:slf4j-api"
+          },
+          "version": "2.0.12"
+        },
+        {
+          "package": {
+            "name": "org.yaml:snakeyaml"
+          },
+          "version": "2.2"
+        },
+        {
+          "package": {
+            "name": "org.springframework.boot:spring-boot"
+          },
+          "version": "3.2.4"
+        },
+        {
+          "package": {
+            "name": "org.springframework.boot:spring-boot-starter-web"
+          },
+          "version": "3.2.4"
+        },
+        {
+          "package": {
+            "name": "org.springframework:spring-core"
+          },
+          "version": "6.1.5"
+        },
+        {
+          "package": {
+            "name": "org.springframework.data:spring-data-commons"
+          },
+          "version": "3.2.4"
+        },
+        {
+          "package": {
+            "name": "org.springframework:spring-web"
+          },
+          "version": "6.1.5"
+        },
+        {
+          "package": {
+            "name": "org.springdoc:springdoc-openapi-common"
+          },
+          "version": "1.8.0"
+        },
+        {
+          "package": {
+            "name": "org.springdoc:springdoc-openapi-ui"
+          },
+          "version": "1.8.0"
+        },
+        {
+          "package": {
+            "name": "org.springdoc:springdoc-openapi-webmvc-core"
+          },
+          "version": "1.8.0"
+        },
+        {
+          "package": {
+            "name": "io.swagger.core.v3:swagger-annotations"
+          },
+          "version": "2.2.21"
+        },
+        {
+          "package": {
+            "name": "io.swagger.core.v3:swagger-core"
+          },
+          "version": "2.2.20"
+        },
+        {
+          "package": {
+            "name": "io.swagger.core.v3:swagger-models"
+          },
+          "version": "2.2.8"
+        },
+        {
+          "package": {
+            "name": "org.webjars:swagger-ui"
+          },
+          "version": "5.11.8"
+        },
+        {
+          "package": {
+            "name": "org.apache.tomcat.embed:tomcat-embed-core"
+          },
+          "version": "10.1.19"
+        },
+        {
+          "package": {
+            "name": "org.apache.tomcat.embed:tomcat-embed-el"
+          },
+          "version": "10.1.19"
+        },
+        {
+          "package": {
+            "name": "io.vavr:vavr"
+          },
+          "version": "0.10.4"
+        },
+        {
+          "package": {
+            "name": "io.vavr:vavr-match"
+          },
+          "version": "0.10.4"
+        }
+      ]
+    }
+  ],
+  "remediations": []
+}

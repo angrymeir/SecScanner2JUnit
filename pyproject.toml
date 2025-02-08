@@ -8,7 +8,7 @@ readme = "README.md"
 homepage = "https://github.com/logchange/SecScanner2JUnit"
 repository = "https://github.com/logchange/SecScanner2JUnit"
 packages = [
-  { include = 'secscanner2junit' },
+    { include = 'secscanner2junit' },
 ]
 
 [tool.poetry.dependencies]

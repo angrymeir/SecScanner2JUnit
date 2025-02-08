@@ -8,6 +8,7 @@ VERSION = "1.0.1"
 
 from secscanner2junit.config import get_config, Config
 from secscanner2junit.container_scanning import ContainerScanningParser
+from secscanner2junit.maven_dependency_check import MavenDependencyCheckParser
 from secscanner2junit.sast import SastParser
 from secscanner2junit.secrets import SecretsParser
 
@@ -16,6 +17,8 @@ class ScanType(enum.Enum):
     SECRETS = 'secrets'
     SAST = 'sast'
     CS = 'container_scanning'
+    MAVEN_DEPENDENCY_CHECK = 'maven_dependency_check'
+
 
     @staticmethod
     def list():
@@ -64,6 +67,8 @@ def main(args=None):
         parser = SastParser(report, args.input_file, ss2ju_config)
     elif args.activity == ScanType.CS.value:
         parser = ContainerScanningParser(report, args.input_file, ss2ju_config)
+    elif args.activity == ScanType.MAVEN_DEPENDENCY_CHECK.value:
+        parser = MavenDependencyCheckParser(report, args.input_file, ss2ju_config)
     else:
         raise NotImplementedError
     testsuite = parser.parse()

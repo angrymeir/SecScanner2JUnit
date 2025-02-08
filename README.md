@@ -42,6 +42,13 @@ Procedure:
 2. Convert report
 3. Upload converted report as junit report
 
+### Report input types:
+You can use following report types as inputs with `ss2ju` command. (f.e `ss2ju sast ....`) 
+- [**sast**](https://docs.gitlab.com/ee/user/application_security/sast/)
+- [**secrets**](https://docs.gitlab.com/ee/user/application_security/secret_detection/pipeline/)
+- [**container_scanning**](https://docs.gitlab.com/ee/user/application_security/container_scanning/)
+- [**maven_dependency_check**](https://github.com/jeremylong/DependencyCheck)
+
 ### Example for Secret Scanning
 This example can be used as is.
 ```yaml
