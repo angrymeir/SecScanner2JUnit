@@ -2,9 +2,9 @@ import enum
 import json
 import sys
 import argparse
-import pkg_resources
-
 from junit_xml import to_xml_report_file
+
+VERSION = "1.0.1"
 
 from secscanner2junit.config import get_config, Config
 from secscanner2junit.container_scanning import ContainerScanningParser
@@ -35,7 +35,7 @@ def save_junit_report(testsuite, output_path):
 
 def parse_arguments(args):
     arg_parser = argparse.ArgumentParser(description="SecScanner2JUnit: Convert security scanner output to JUnit format.")
-    arg_parser.add_argument('--version', action='version', version=pkg_resources.get_distribution('secscanner2junit').version)
+    arg_parser.add_argument('--version', action='version', version=VERSION)
     arg_parser.add_argument('activity', choices=ScanType.list())
     arg_parser.add_argument('input_file')
     arg_parser.add_argument('output_file')
