@@ -9,8 +9,8 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
-      - name: Sleep for 180 seconds # so that the package has been published to PyPI in the meantime
-        run: sleep 180
+      - name: Sleep for 600 seconds # so that the package has been published to PyPI in the meantime
+        run: sleep 600
         shell: bash
 
       - name: Check out the repo
