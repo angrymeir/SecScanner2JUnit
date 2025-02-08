@@ -2,7 +2,7 @@
 name = "secscanner2junit"
 version = "1.0.0"
 description = "Convert Security Scanner Output to JUnit Format"
-authors = ["logchange team <team@logchange.dev", "Florian Angermeir <florian.angermeir@tum.de>"]
+authors = ["logchange team <team@logchange.dev>", "Florian Angermeir <florian.angermeir@tum.de>"]
 license = "GPL-3.0-only"
 readme = "README.md"
 homepage = "https://github.com/logchange/SecScanner2JUnit"
