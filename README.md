@@ -1,10 +1,23 @@
 # SecScanner2JUnit
-[![PyPI version](https://badge.fury.io/py/secscanner2junit.svg)](https://badge.fury.io/py/secscanner2junit)
-[![Downloads](https://static.pepy.tech/badge/secscanner2junit/month)](https://pepy.tech/project/secscanner2junit)
-[![Supports latest GitLab version](https://github.com/angrymeir/SecScanner2JUnit/actions/workflows/report-validate.yml/badge.svg)](https://github.com/angrymeir/SecScanner2JUnit/actions/workflows/report-validate.yml)
-[![Docker](https://github.com/angrymeir/SecScanner2JUnit/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/angrymeir/SecScanner2JUnit/actions/workflows/docker-publish.yml)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/angrymeir/SecScanner2JUnit)
+<p align="center">
+    <a href="https://pypi.org/project/secscanner2junit/">
+        <img src="https://badge.fury.io/py/secscanner2junit.svg" alt="PyPI version"/></a>
+    <a href="https://pepy.tech/project/secscanner2junit">
+        <img src="https://static.pepy.tech/badge/secscanner2junit/month" alt="Downloads"/></a>
+    <a href="https://github.com/logchange/SecScanner2JUnit/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors/logchange/SecScanner2JUnit" alt="Contributors"/></a>
+    <a href="https://github.com/logchange/SecScanner2JUnit/pulse">
+        <img src="https://img.shields.io/github/commit-activity/m/logchange/SecScanner2JUnit" alt="Activity"/></a>
+    <a href="https://hub.docker.com/repository/docker/logchange/secscanner2junit/">
+        <img src="https://img.shields.io/docker/v/logchange/secscanner2junit?sort=semver&color=green&label=DockerHub" alt="DockerHub"/></a>
+    <a href="https://hub.docker.com/repository/docker/logchange/secscanner2junit/">
+        <img src="https://img.shields.io/docker/pulls/logchange/secscanner2junit" alt="DockerHub Pulls"/></a>
+    <a href="https://github.com/logchange/SecScanner2JUnit/actions/workflows/report-validate.yml">
+        <img src="https://github.com/logchange/SecScanner2JUnit/actions/workflows/report-validate.yml/badge.svg" alt="Supports latest GitLab version"/></a>
+    <a href="https://gitpod.io/#https://github.com/logchange/SecScanner2JUnit">
+        <img src="https://img.shields.io/badge/Open_in-GitPod-ffae33?style=flat-square&logo=gitpod" alt="Open in Gitpod"/></a>
+</p>
 
 GitLab offers [security scanning and visualization](https://docs.gitlab.com/ee/user/application_security/) directly via and on their platform.  
 One nice feature is direct insights on merge requests. However, this feature is only available with the Ultimate tier. To also use this feature on the free tier, one can build around it by taking the security tool output, converting it to the JUnit format, and uploading it as JUnit report.
@@ -145,6 +158,7 @@ sast:
       value: "2555"
     - type: "find_sec_bugs_type"
       value: "SPRING_ENDPOINT"
+    - id: "db914ce5737b49650ae650fc3b0fe38a531eadd8ea780f48a013419c4adec7f0"
 ```
 
 And now you can modify execution commands as follows:
@@ -155,7 +169,7 @@ And now you can modify execution commands as follows:
 
 
 ### Usage with docker
-For easier usage in CI, `Secscanner2JUnit` is also shipped in a docker container: https://hub.docker.com/r/angrymeir/secscanner2junit  
+For easier usage in CI, `Secscanner2JUnit` is also shipped in a docker container: https://hub.docker.com/r/logchange/secscanner2junit  
 Its' usage is similar to the ways described above:
 ```yaml
 ...
@@ -163,7 +177,7 @@ Its' usage is similar to the ways described above:
 secret_convert:
   stage: convert
   image:
-    name: angrymeir/secscanner2junit:latest
+    name: logchange/secscanner2junit:latest
     entrypoint: [""]
   dependencies:
     - secret_detection
@@ -173,3 +187,29 @@ secret_convert:
     reports:
       junit: gl-secret-detection-report.xml
 ```
+
+
+### Development
+
+Create Python Virtual Environment
+```bash
+python -m venv ./venv
+```
+
+Activate Python Virtual Environment
+```bash
+source ./venv/bin/activate
+```
+
+Install dependencies
+```bash
+poetry install
+```
+
+Run tests
+```bash
+poetry run pytest
+```
+
+
+

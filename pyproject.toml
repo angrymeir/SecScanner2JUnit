@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "secscanner2junit"
-version = "0.1.16"
+version = "1.0.1"
 description = "Convert Security Scanner Output to JUnit Format"
-authors = ["Florian Angermeir <florian.angermeir@tum.de>"]
+authors = ["logchange team <team@logchange.dev>", "Florian Angermeir <florian.angermeir@tum.de>"]
 license = "GPL-3.0-only"
 readme = "README.md"
-homepage = "https://github.com/angrymeir/SecScanner2JUnit"
-repository = "https://github.com/angrymeir/SecScanner2JUnit"
+homepage = "https://github.com/logchange/SecScanner2JUnit"
+repository = "https://github.com/logchange/SecScanner2JUnit"
 packages = [
     { include = 'secscanner2junit' },
 ]
@@ -16,6 +16,7 @@ python = "^3.10"
 junit-xml = "^1.9"
 PyYAML = "^6.0"
 pytest = "^7.2.0"
+setuptools = "^75.5.0"
 
 [tool.poetry.dev-dependencies]
 

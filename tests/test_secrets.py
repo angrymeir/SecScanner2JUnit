@@ -9,8 +9,8 @@ class TestSecretsParser(unittest.TestCase):
 
     def test_empty_report(self):
         # given:
-        input_report_path = "resources/test_secrets/test_empty/gl-secret-detection-report.json"
-        missing_config_path = "resources/test_secrets/test_basic/ss2ju-config.yml"
+        input_report_path = "tests/resources/test_secrets/test_empty/gl-secret-detection-report.json"
+        missing_config_path = "tests/resources/test_secrets/test_basic/ss2ju-config.yml"
 
         report = get_report(input_report_path)
         config = get_config(missing_config_path)
@@ -24,8 +24,8 @@ class TestSecretsParser(unittest.TestCase):
 
     def test_basic(self):
         # given:
-        input_report_path = "resources/test_secrets/test_basic/gl-secret-detection-report.json"
-        missing_config_path = "resources/test_secrets/test_basic/ss2ju-config.yml"
+        input_report_path = "tests/resources/test_secrets/test_basic/gl-secret-detection-report.json"
+        missing_config_path = "tests/resources/test_secrets/test_basic/ss2ju-config.yml"
 
         report = get_report(input_report_path)
         config = get_config(missing_config_path)
@@ -48,8 +48,8 @@ class TestSecretsParser(unittest.TestCase):
 
     def test_secret_suppression(self):
         # given:
-        input_report_path = "resources/test_secrets/test_secrets_suppression/gl-secret-detection-report.json"
-        input_config_path = "resources/test_secrets/test_secrets_suppression/ss2ju-config.yml"
+        input_report_path = "tests/resources/test_secrets/test_secrets_suppression/gl-secret-detection-report.json"
+        input_config_path = "tests/resources/test_secrets/test_secrets_suppression/ss2ju-config.yml"
 
         report = get_report(input_report_path)
         config = get_config(input_config_path)

@@ -7,7 +7,7 @@ class TestConfig(unittest.TestCase):
 
     def test_get_config_no_file(self):
         # given:
-        input_config_path = "resources/test_config/test_get_config_no_file/ss2ju-config.yml"
+        input_config_path = "tests/resources/test_config/test_get_config_no_file/ss2ju-config.yml"
 
         # when:
         config = get_config(input_config_path)
@@ -18,7 +18,7 @@ class TestConfig(unittest.TestCase):
 
     def test_get_config_empty_file(self):
         # given:
-        input_config_path = "resources/test_config/test_get_config_empty_file/ss2ju-config.yml"
+        input_config_path = "tests/resources/test_config/test_get_config_empty_file/ss2ju-config.yml"
 
         # when:
         config = get_config(input_config_path)
@@ -29,11 +29,12 @@ class TestConfig(unittest.TestCase):
 
     def test_get_config(self):
         # given:
-        input_config_path = "resources/test_config/test_get_config/ss2ju-config.yml"
+        input_config_path = "tests/resources/test_config/test_get_config/ss2ju-config.yml"
 
         # when:
         config = get_config(input_config_path)
 
         # then:
-        expected = Config([Suppression('cwe', '2555'), Suppression('find_sec_bugs_type', 'SPRING_ENDPOINT')])
+        expected = Config(
+            [Suppression(type='cwe', value='2555'), Suppression(type='find_sec_bugs_type', value='SPRING_ENDPOINT')])
         self.assertEqual(expected, config)
