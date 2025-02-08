@@ -124,8 +124,8 @@
       "category": "sast",
       "name": "Found Spring endpoint",
       "message": "Found Spring endpoint",
-      "description": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController is a Spring endpoint (Controller)",
-      "cve": "8e968b3dea7c8b68b43c07ab9b37c120:SPRING_ENDPOINT:src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java:11",
+      "description": "dev.logchange.example.springbootlogchangeexample.FakeErrorController is a Spring endpoint (Controller)",
+      "cve": "8e968b3dea7c8b68b43c07ab9b37c120:SPRING_ENDPOINT:src/main/java/dev/logchange/example/springbootlogchangeexample/FakeErrorController.java:11",
       "severity": "Low",
       "confidence": "Low",
       "scanner": {
@@ -133,9 +133,9 @@
         "name": "Find Security Bugs"
       },
       "location": {
-        "file": "src/main/java/pl/com/softnet/example/springbootsoftnetexample/FakeErrorController.java",
+        "file": "src/main/java/dev/logchange/example/springbootlogchangeexample/FakeErrorController.java",
         "start_line": 11,
-        "class": "pl.com.softnet.example.springbootsoftnetexample.FakeErrorController",
+        "class": "dev.logchange.example.springbootlogchangeexample.FakeErrorController",
         "method": "getSomeFakeError"
       },
       "identifiers": [
