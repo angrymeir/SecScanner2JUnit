@@ -16,7 +16,7 @@
     <a href="https://github.com/logchange/SecScanner2JUnit/actions/workflows/report-validate.yml">
         <img src="https://github.com/logchange/SecScanner2JUnit/actions/workflows/report-validate.yml/badge.svg" alt="Supports latest GitLab version"/></a>
     <a href="https://gitpod.io/#https://github.com/logchange/SecScanner2JUnit">
-        <img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod"/></a>
+        <img src="https://img.shields.io/badge/Open_in-GitPod-ffae33?style=flat-square&logo=gitpod" alt="Open in Gitpod"/></a>
 </p>
 
 GitLab offers [security scanning and visualization](https://docs.gitlab.com/ee/user/application_security/) directly via and on their platform.  
